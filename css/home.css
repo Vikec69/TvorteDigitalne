@@ -43,7 +43,7 @@
 
 /*INFO*/
 
-.info, .about{
+.info, .about, .skills{
     background-color: var(--container-barva);
     padding: 2rem 1.5rem;
     border-radius: 2rem;
@@ -143,4 +143,31 @@
 
 .about .button{
     width: 100%;
+}
+
+/*Zkušenosti*/
+
+.skills__title{
+    font-size: var(--h2-velikost)
+}
+
+.skills__item{
+    width: 2.5rem;
+    transition: transform .4s;
+}
+
+.skills__item:hover{
+    transform: translateY(-.25rem);
+}
+
+.skills__items{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skills__description{
+    font-size: var(--mala-velikost);
 }
