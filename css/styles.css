@@ -1,0 +1,148 @@
+/*Google Fonty (Monserrat a Playfair Display*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/*PROMĚNNÉ*/
+
+/*Barvy*/
+/*hue, saturace, svetlost*/
+
+:root{
+    --hue: 298;
+    --prvni-barva: hsl(var(--hue), 80%, 49%);
+    --prvni-barva-alt: hsl(var(--hue), 76%, 45%);
+    --bila-barva: hsl(0,0%,98%);
+    --cerna-barva: hsl(0,0%,1%);
+    --text-barva: hsl(var(--hue), 2%, 66%);
+    --body-barva: hsl(var(--hue), 100%, 1%);
+    --container-barva: hsl(var(--hue), 2%, 10%);
+    --prechod: conic-gradient(from 150deg at 50% 45%,
+            hsl(var(--hue), 80%, 20%) 0deg,
+            hsl(var(--hue), 80%, 48%) 140deg,
+            hsl(var(--hue), 80%, 20%) 360deg);
+
+    /*Text*/
+    /*1rem = 16px*/
+    --body-font: "Montserrat", sans-serif;
+    --druhy-font: "Playfair Display";
+    --max-velikost: 2.5rem;
+    --h1-velikost: 1.5rem;
+    --h2-velikost: 1.25rem;
+    --h3-velikost: 1rem;
+
+    --normalni-velikost: .938rem;
+    --mala-velikost: .813rem;
+    --nejmensi-velikost: .75rem;
+
+    /*Font weight*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*parametr Z*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+
+    /*Responzivni text*/
+    @media screen and (min-width: 1168px) {
+        :root {
+            --max-velikost: 3.5rem;
+            --h1-velikost: 2.25rem;
+            --h2-velikost: 1.5rem;
+            --h3-velikost: 1.25rem;
+            --normalni-velikost: 1rem;
+            --mala-velikost: .875rem;
+            --nejmensi-velikost: .13rem;
+        }
+    }
+}
+
+/*ZÁKLAD STRÁNKY*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, input, textarea, button {
+    font-family: var(--body-font);
+    font-size: var(--normalni-velikost);
+}
+
+body {
+    background-color: var(--body-barva);
+    color: var(--bila-barva);
+}
+
+input, button, textarea { 
+border: none;
+outline: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--bila-barva);
+    font-weight: var(--font-semi-bold)
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*TŘÍDY*/
+
+.container {
+    max-width: 1168px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 2rem 3rem;
+}
+
+.section__title {
+    font-size: var(--h2-velikost);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.button{
+    display: inline-flex;
+    justify-content: center;
+    background-color: var(--prvni-barva);
+    color: var(--bila-barva);
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 2.5rem;
+    border-radius: 4rem;
+    transition: background-color .4s
+}
+
+.button__black{
+    background-color: var(--cerna-barva);
+}
+
+.button:hover{
+    background-color: var(--prvni-barva-alt);
+}
