@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.knowledge__card{
+    background-color: var(--container-barva);
+    padding: 4rem 1.5rem 3.5rem 1.5rem;
+    border-radius: 2rem;
+}
+
+.knowledge__icon{
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.knowledge__icon i {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: var(--z-tooltip);
+}
+
+.knowledge__circle{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--prvni-barva);
+    border-radius: 50%;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    transition: transform .4s;
+}
+
+.knowledge__name{
+    font-size: var(--h3-velikost);
+    margin-bottom: 1rem;
+}
+
+.knowledge__description{
+    color: var(--text-barva)
+}
+
+.knowledge__card:hover .knowledge__circle{
+    transform: translate(.25rem, -.25rem);
+}
+
+.experience__container{
+    row-gap: 2rem;
+}
+
+.experience__card{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.expreience__company{
+    font-size: var(--h2-velikost)
+}
+
+.experience__data{
+    background-color: var(--container-barva);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.experience__profession{
+    font-size: var(--h3-velikost);
+    margin-bottom: .5rem;
+}
+
+.experience__date{
+    display:block;
+    font-size: var(--mensi-velikost);
+    margin-bottom : 1rem;
+}
+
+.experience__description{
+    color: var(--text-barva);
+}

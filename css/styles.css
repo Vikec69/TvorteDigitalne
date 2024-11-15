@@ -6,6 +6,11 @@
 /*Barvy*/
 /*hue, saturace, svetlost*/
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root{
     --hue: 298;
     --prvni-barva: hsl(var(--hue), 80%, 49%);
