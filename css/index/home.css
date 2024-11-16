@@ -27,7 +27,7 @@
 }
 
 .profil__name{
-    font: var(--font-semi-bold) var(--max-velikost) var(--body-font);
+    font: var(--font-medium) var(--max-velikost) var(--body-font);
     margin-bottom: 1rem;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .info__name{
-    font: var(--font-regular) var(--h1-velikost) var(--druhy-font)
+    font: var(--font-regular) var(--h1-velikost) var(--body-font)
 }
 
 .info__data{

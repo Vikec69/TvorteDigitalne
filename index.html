@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/index/projects.css">
     <link rel="stylesheet" href="css/index/knowledge.css">
     <link rel="stylesheet" href="css/index/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tvořte Digitálně</title>
@@ -81,7 +82,6 @@
                     <h3 class="about__name">
                         Viktor <b>Červenka</b>
                     </h3>
-                    <img src="img/LOGO/TvorteDigitalne.svg" style="filter: invert()">
                     <p class="about__description">
                         Ňouma Vikec zajebal stránku jako maturitní projekt na téma, který se mu líbilo.
                     </p>
@@ -99,7 +99,9 @@
                         </a>
                     </div>
                     <div class="about__image">
+                        <img src="img/LOGO/TvorteDigitalne.svg" style="filter: invert(); width: 50%; overflow: hidden ; margin-left: auto; margin-right: auto;">
                         <img src="img/skelly boy cheezit.gif" alt="image" class="about__img">
+                        
                     </div>
                 
                     <p class="about__note">
@@ -208,7 +210,7 @@
 
                     <a href="#" target="_blank" class="projects__button">
                         <i class="ri-links-line"></i>
-                        <span>Navštiv projekt</span>
+                        <span>Navštívit projekt</span>
                     </a>
                 </article>
             </div>
@@ -291,10 +293,46 @@
 
                     <button type="submit" class="button contact__button">Poslat zprávu</button>
 
-                    <p class="contact__message" id="contact-message">Zpráva</p>
+                    <p class="contact__message" id="contact-message"></p>
                 </form>
             </div>
         </section>
         </main>
+        <footer class="footer">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <a href="#" class="footer__logo">Tvořte Digitálně </a>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#home" class="footer__link">Domů</a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="footer__link">Projekty</a>
+                        </li>
+                        <li>
+                            <a href="navody.html" class="footer__link">Návody</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__social">
+                    <a href="https://www.youtube.com/@vikec" target="_blank" class="footer__social-link">
+                        <i class="ri-youtube-line"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/cerveney_jezis/" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+
+                    <a href="https://github.com/Vikec69" target="_blank" class="footer__social-link">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!--Email JS-->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <script src="js/main.js"></script>
 </body>
 </html>
