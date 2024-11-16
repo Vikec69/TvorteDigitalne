@@ -12,7 +12,7 @@
 }
 
 :root{
-    --hue: 298;
+    --hue: 340;
     --prvni-barva: hsl(var(--hue), 80%, 49%);
     --prvni-barva-alt: hsl(var(--hue), 76%, 45%);
     --bila-barva: hsl(0,0%,98%);
