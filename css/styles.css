@@ -12,7 +12,7 @@
 }
 
 :root{
-    --hue: 340;
+    --hue: 250;
     --prvni-barva: hsl(var(--hue), 80%, 49%);
     --prvni-barva-alt: hsl(var(--hue), 76%, 45%);
     --bila-barva: hsl(0,0%,98%);
@@ -172,13 +172,17 @@ img {
 /*======ODDELENI=======*/
 
 /*==Malé zařízení==*/
-@media screen and (max-width: 320px){
+@media screen and (min-width: 320px){
     .container{
         margin-inline: 1rem;
     }
 
     .nav{
         padding: 1rem;
+    }
+
+    .profil{
+        height: 100%;
     }
 }
 
