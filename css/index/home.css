@@ -43,7 +43,9 @@
 
 /*INFO*/
 
-.info, .about, .skills{
+.info, 
+.about, 
+.skills{
     background-color: var(--container-barva);
     padding: 2rem 1.5rem;
     border-radius: 2rem;
@@ -165,7 +167,8 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 1.5rem;
+    margin-block: 1.5rem;
+    
 }
 
 .skills__description{
