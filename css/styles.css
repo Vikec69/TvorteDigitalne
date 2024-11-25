@@ -261,7 +261,7 @@ img {
     }
 
     .section__title{
-        font-size: var(--h1-velikost);
+        font-size: var(--max-velikost);
         margin-bottom: 4rem;
     }
 

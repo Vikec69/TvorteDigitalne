@@ -27,9 +27,3 @@ const contactForm = document.getElementById('contact-form'),
         })
     }
     contactForm.addEventListener('submit', sendEmail)
-
-    ScrollReveal().reveal('.profil, contact__form', {delay: 200 });
-    ScrollReveal().reveal('.info', { origin: 'left', delay: 400 });
-    ScrollReveal().reveal('.skills', { origin: 'left', delay: 600 });
-    ScrollReveal().reveal('.about', { origin: 'right', delay: 800 });
-    ScrollReveal().reveal('.projects__card, .knowledge__card, experience__card',{ interval: 100});

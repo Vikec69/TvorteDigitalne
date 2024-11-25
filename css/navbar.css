@@ -30,3 +30,11 @@
     place-items: center;
     transition: background-color .6s
 }
+
+.active-link{
+    background-color: var(--prvni-barva);
+}
+
+.nav__link:hover{
+background-color: var(--prvni-barva-alt);
+}

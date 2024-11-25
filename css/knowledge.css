@@ -1,0 +1,41 @@
+.knowledge__card{
+    background-color: var(--container-barva);
+    padding: 4rem 1.5rem 3.5rem 1.5rem;
+    border-radius: 2rem;
+}
+
+.knowledge__icon{
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.knowledge__icon i {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: var(--z-tooltip);
+}
+
+.knowledge__circle{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--prvni-barva);
+    border-radius: 50%;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    transition: transform .4s;
+}
+
+.knowledge__name{
+    font-size: var(--h3-velikost);
+    margin-bottom: 1rem;
+}
+
+.knowledge__description{
+    color: var(--text-barva)
+}
+
+.knowledge__card:hover .knowledge__circle{
+    transform: translate(.25rem, -.25rem);
+}

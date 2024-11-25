@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contact__group,
+.contact__form{
+    gap: 1rem;
+}
+
+.contact__form{
+    position: relative;
+}
+
+.contact__input{
+    background-color: var(--container-barva);
+    padding: 1.25rem;
+    border-radius: 2rem;
+    color: var(--bila-barva)
+}
+
+.contact__input::placeholder{
+    color: var(--text-barva)
+}
+
+.contact__input:autofill{
+    transition: background-color 6000s, color 6000s;
+}
+
+.contact__area{
+    height: 15rem;
+    border-radius: 2rem;
+    resize:none;
+}
+
+.contact__message{
+    position: absolute;
+    left: 0;
+    bottom: 4.5rem;
+    font-size: var(--mensi-velikost)
+}
+
+.contact__button{
+    margin-top:1.5rem;
+    cursor:cell;
+}
+
+.contact{
+    flex: 1; /* Sekce zabírá volné místo mezi navbar a footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikální zarovnání na střed */
+    align-items: center;     /* Horizontální zarovnání na střed */
+}
