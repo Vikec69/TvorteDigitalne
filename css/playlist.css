@@ -32,7 +32,7 @@
  
  .playlist-details .row .column .save-playlist button span{
     font-size: 1.8rem;
-    color:var(--cerna-barva);
+    color:var(--bila-barva);
  }
  
  .playlist-details .row .column .save-playlist button:hover{
@@ -40,7 +40,7 @@
  }
  
  .playlist-details .row .column .save-playlist button:hover i{
-    color:var(--bila-barva);
+    color:var(--prvni-barva);
  }
  
  .playlist-details .row .column .save-playlist button:hover span{
