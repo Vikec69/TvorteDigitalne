@@ -1,5 +1,4 @@
 .inline-btn,
-.inline-option-btn,
 .inline-delete-btn,
 .btn,
 .delete-btn,
@@ -13,6 +12,7 @@
    text-align: center;
    margin-top: 1rem;
    background-color: var(--prvni-barva);
+   transition: background-color .4s
 }
 
 .watch-video .video-container{
@@ -100,6 +100,7 @@
     font-size: 1.8rem;
     cursor: pointer;
     background-color: var(--prvni-barva);
+    transition: background-color .4s
  }
  
  .watch-video .video-container .flex button i{
@@ -114,13 +115,18 @@
  .watch-video .video-container .flex button:hover{
     background-color: var(--bila-barva);
  }
- 
+
  .watch-video .video-container .flex button:hover i{
-    color: var(--bila-barva);
+    color: var(--prvni-barva);
  }
  
  .watch-video .video-container .flex button:hover span{
     color: var(--cerna-barva);
+ }
+
+ .inline-btn:hover{
+   background-color: var(--bila-barva);
+   color: var(--cerna-barva);
  }
  
  .watch-video .video-container .description{
@@ -130,8 +136,22 @@
     margin-top: 2rem;
  }
 
+ .watch-video {
+   width: 80%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+
+
+
  .comments{
     margin: 5rem;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
  }
  
  .comments .add-comment{
@@ -143,7 +163,7 @@
  
  .comments .add-comment h3{
     font-size: 2rem;
-    color: var(--black);
+    color: var(--bila-barva);
     margin-bottom: 1rem;
  }
  
@@ -214,3 +234,7 @@
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
  }
  
+ .inline-delete-btn:hover{
+   background-color: var(--bila-barva);
+   color: var(--cerna-barva);
+ }
