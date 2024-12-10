@@ -14,7 +14,7 @@
 :root{
     --hue: 250;
     --prvni-barva: hsl(var(--hue), 80%, 49%);
-    --prvni-barva-alt: hsl(var(--hue), 76%, 45%);
+    --prvni-barva-alt: hsl(var(--hue), 76%, 40%);
     --bila-barva: hsl(0,0%,98%);
     --cerna-barva: hsl(0,0%,1%);
     --text-barva: hsl(var(--hue), 2%, 66%);
