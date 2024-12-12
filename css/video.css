@@ -7,7 +7,6 @@
    color:var(--bila-barva);
    font-size: 1.8rem;
    cursor: pointer;
-   text-transform: capitalize;
    padding:1rem 3rem;
    text-align: center;
    margin-top: 1rem;
@@ -238,3 +237,137 @@
    background-color: var(--bila-barva);
    color: var(--cerna-barva);
  }
+
+ /*==Malé zařízení==*/
+@media screen and (min-width: 320px){
+   .watch-video {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+   
+   .watch-video .video-container .title{
+      font-size: 2rem;
+      color: var(--bila-barva);
+   }
+
+   .watch-video .video-container .info p{
+      font-size: 1.4rem;
+   }
+   
+   .watch-video .video-container{
+      padding: 1rem;
+      margin: 2rem;
+   }
+
+   .inline-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:var(--bila-barva);
+   font-size: 1.4rem;
+   cursor: pointer;
+   padding:1rem 1rem;
+   text-align: center;
+   margin-top: 1rem;
+   background-color: var(--prvni-barva);
+   transition: background-color .4s
+}
+
+.watch-video .video-container .flex button{
+   border-radius: .5rem;
+   padding: 1rem 2rem;
+   font-size: 1.4rem;
+   margin-top: 1rem;
+   cursor: pointer;
+   background-color: var(--prvni-barva);
+   transition: background-color .4s
+}
+
+.watch-video .video-container .description{
+   line-height: 1.5;
+   font-size: 1.2rem;
+   color: var(--bila-barva);
+   margin-top: 2rem;
+}
+
+.comments{
+   margin: 5rem;
+   width: 80%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+}
+
+/*==Velké zařízení==*/
+@media screen and (min-width: 1200px){
+   .watch-video {
+      width: 80%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+   
+    .watch-video .video-container .title{
+      font-size: 2rem;
+    }
+
+    .watch-video .video-container .info p{
+      font-size: 1.6rem;
+   }
+
+   .watch-video .video-container{
+      background-color: var(--body-barva);
+      border-radius: .5rem;
+      padding: 2rem;
+      margin: 5rem;
+   }
+
+   .inline-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:var(--bila-barva);
+   font-size: 1.8rem;
+   cursor: pointer;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+   background-color: var(--prvni-barva);
+   transition: background-color .4s
+}
+
+ 
+.watch-video .video-container .flex button{
+   border-radius: .5rem;
+   padding: 1rem 1.5rem;
+   font-size: 1.8rem;
+   cursor: pointer;
+   background-color: var(--prvni-barva);
+   transition: background-color .4s
+}
+
+.comments{
+   margin: 5rem;
+   width: 60%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.watch-video .video-container .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+   width: 84%;
+}
+}
