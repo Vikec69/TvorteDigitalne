@@ -41,7 +41,6 @@
  .watch-video .video-container .info{
     display: flex;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
     border-bottom: var(--bila-barva);
     padding-bottom: 1.5rem;
     gap: 2.5rem;
@@ -133,6 +132,7 @@
     font-size: 1.7rem;
     color: var(--bila-barva);
     margin-top: 2rem;
+    margin-bottom: 1.5rem;
  }
 
  .watch-video {
@@ -239,7 +239,7 @@
  }
 
  /*==Malé zařízení==*/
-@media screen and (min-width: 320px){
+@media screen and (min-width: 200px){
    .watch-video {
       width: 100%;
       display: block;
@@ -253,12 +253,24 @@
    }
 
    .watch-video .video-container .info p{
-      font-size: 1.4rem;
+      font-size: 1rem;
    }
    
    .watch-video .video-container{
-      padding: 1rem;
-      margin: 2rem;
+      padding: 2rem;
+      margin: 1rem;
+   }
+
+   .watch-video .video-container .video{
+      position: relative;
+      margin-bottom: 1rem;
+   }
+   
+   .watch-video .video-container .video video{
+      border-radius: .5rem;
+      width: 100%;
+      object-fit: fill;
+      background-color: #000;
    }
 
    .inline-btn,
@@ -279,7 +291,7 @@
 
 .watch-video .video-container .flex button{
    border-radius: .5rem;
-   padding: 1rem 2rem;
+   padding: 1rem 1rem;
    font-size: 1.4rem;
    margin-top: 1rem;
    cursor: pointer;
@@ -292,6 +304,31 @@
    font-size: 1.2rem;
    color: var(--bila-barva);
    margin-top: 2rem;
+}
+
+.watch-video .video-container .tutor{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 1rem;
+}
+
+.watch-video .video-container .tutor img{
+   border-radius: 50%;
+   height: 3rem;
+   width: 3rem;
+   object-fit: cover;
+}
+
+.watch-video .video-container .tutor h3{
+   font-size: 1.5rem;
+   color: var(--bila-barva);
+   margin-bottom: .2rem;
+}
+
+.watch-video .video-container .tutor span{
+   font-size: 1.3rem;
+   color: var(--bila-barva);
 }
 
 .comments{
