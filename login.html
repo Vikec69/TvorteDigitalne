@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mně</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!--=================================*NAVBAR*===============================-->
+    <nav class = "nav">
+        <ul class ="nav__list">
+            <li>
+                <a href="index.html" title="Domů" class="nav__link">
+                    <i class="ri-home-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html" title="Projekty" class="nav__link">
+                    <i class="ri-folder-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="navody.html" title="Návody" class="nav__link">
+                    <i class="ri-file-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html" title="Přihlášení" class="nav__link active-link">
+                    <i class="ri-honour-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" title="Kontakt" class="nav__link">
+                    <i class="ri-send-plane-line"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="login__content">
+            <img src="img/Untitled-2.png" alt="login image" class="login__img">
+            <form action="" class="login__form">
+                <div>
+                    <h1 class="login__title">
+                        <span>Vítejte </span>zpět
+                    </h1>
+                </div>
+                <div>
+                    <div class="login__inputs">
+                        <label for="" class="login__label">Email</label>
+                        <input type="email" placeholder="Zadejte emailovou adresu" required class="login__input">
+                    </div>
+
+                    <div class="login__inputs">
+                        <label for="" class="login__label">Heslo</label>
+
+                        <div class="login__box">
+                            <input type="password" placeholder="Zadejte své heslo" required class="login__input" id="input-pass">
+                            <i class="ri-eye-line login__eye" id="input-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login__check">
+                    <input type="checkbox" class="login__check-input">
+                    <label for="" class="login__check-label">Zapamatuj si mě</label>
+                </div>
+
+                <div>
+                    <div class="login__buttons">
+                        <button class="login__button">Přihlásit se</button>
+                        <button class="login__button login__button-ghost">Registrace</button>
+                    </div>
+
+                    <a href="contact.html" class="login__forgot">Zapomněli jste heslo?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/hesla.js"></script>
+</body>
+</html>
