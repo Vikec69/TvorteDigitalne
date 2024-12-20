@@ -177,24 +177,31 @@ img{
 
 /*==Menší zařízení==*/
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 768px){
     .login__buttons{
         flex-direction: column;
+    }
+
+    .login__form{
+        transform: translateY(-50%);
+        top: 50%;
     }
 }
 
 /*==Střední zařízení==*/
 
-@media screen and (min-width: 576px){
+@media screen and (max-width: 1200px){
     .login__form{
         width:450px;
         justify-self: center;
-        margin-top: 5rem;
+        transform: translateY(-50%);
+        top: 50%;
     }
+
 }
 
-/*==Velké zařízení velikost==*/
-@media screen and (min-width: 1064px){
+/*==Velké zařízení==*/
+@media screen and (min-width: 1200px){
     .container{
         height: 100vh;
         display: grid;
@@ -214,6 +221,8 @@ img{
     .login__form{
         justify-self: flex-end;
         margin-right: 4.5rem;
+        margin-top: 5rem;
+        width:450px;
     }
 
     .login__title{
