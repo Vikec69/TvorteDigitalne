@@ -226,7 +226,7 @@ background-color: var(--prvni-barva-alt);
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    margin: 0 auto;
+    max-width: 93%
 }
 
 .footer__logo{
@@ -996,7 +996,7 @@ body.experience {
     color: var(--bila-barva);
  }
  
- .watch-video .video-container .info{
+ .watch-video .video-container .stats{
     display: flex;
     margin-top: 1.5rem;
     border-bottom: var(--bila-barva);
@@ -1005,15 +1005,15 @@ body.experience {
     align-items: center;
  }
  
- .watch-video .video-container .info p{
+ .watch-video .video-container .stats p{
     font-size: 1.6rem;
  }
  
- .watch-video .video-container .info p span{
+ .watch-video .video-container .stats p span{
     color: var(--bila-barva);
  }
  
- .watch-video .video-container .info i{
+ .watch-video .video-container .stats i{
     margin-right: 1rem;
     color: var(--prvni-barva);
  }
@@ -1408,9 +1408,37 @@ body.experience {
         transform: translateY(-50%);
         top: 50%;
     }
+
+    .footer__container{
+        display: block;
+        margin-bottom: 7rem;
+    }
+
+    .footer__container p{
+        margin-top: 0.5rem
+    }
+
+    .footer__social{
+        margin-top: 1rem
+    }
+
 }
 
 /*==Střední zařízení==*/
+
+@media screen and (min-width: 768px){
+.footer__container,
+.footer__content{
+    grid-template-columns: repeat(2,max-content);
+    align-items: center;
+}
+.footer__container{
+    justify-content: space-evenly;
+}
+.footer__content{
+    column-gap: 4.5rem;
+}
+}
 
 @media screen and (max-width: 1200px){
     .login__form{
@@ -1453,7 +1481,7 @@ body.experience {
 }
 
 /*==Malé zařízení==*/
-@media screen and (min-width: 320px){
+@media screen and (max-width: 320px){
     .container{
         margin-inline: 1rem;
     }
