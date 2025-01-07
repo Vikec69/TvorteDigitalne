@@ -10,39 +10,6 @@
 </head>
 <body>
 <div id="flex-container">
-    <nav class = "nav">
-        <ul class ="nav__list">
-            <li>
-                <a href="index.html" title="Domů" class="nav__link">
-                    <i class="ri-home-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="projects.html" title="Projekty" class="nav__link active-link">
-                    <i class="ri-folder-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="navody.html" title="Návody" class="nav__link">
-                    <i class="ri-file-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="login.html" title="Přihlášení" class="nav__link">
-                    <i class="ri-honour-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.html" title="Kontakt" class="nav__link">
-                    <i class="ri-send-plane-line"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
     <section class = "projects section">
         <h2 class="section__title">PROJEKTY</h2>
         <div class="projects__container container grid">
@@ -107,25 +74,7 @@
             </article>
         </div>
     </section>
-    <footer>
-        <div class="footer__container ">
-                <a href="index.html" class="footer__logo">Tvořte Digitálně </a>
-                <p >Táto stránka je pouze fiktivní. <br> Jedná se o Maturitní práci.</p>
-            <div class="footer__social">
-                <a href="https://www.youtube.com/@vikec" target="_blank" class="footer__social-link">
-                    <i class="ri-youtube-line"></i>
-                </a>
-
-                <a href="https://www.instagram.com/cerveney_jezis/" target="_blank" class="footer__social-link">
-                    <i class="ri-instagram-line"></i>
-                </a>
-
-                <a href="https://github.com/Vikec69" target="_blank" class="footer__social-link">
-                    <i class="ri-github-fill"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.html" ?>
     </div>
 </body>
 </html>

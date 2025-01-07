@@ -10,39 +10,7 @@
 </head>
 <body>
 <div id="flex-container">
-    <nav class = "nav">
-        <ul class ="nav__list">
-            <li>
-                <a href="index.html" title="Domů" class="nav__link">
-                    <i class="ri-home-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="projects.html" title="Projekty" class="nav__link">
-                    <i class="ri-folder-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="navody.html" title="Návody" class="nav__link">
-                    <i class="ri-file-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="login.html" title="Přihlášení" class="nav__link">
-                    <i class="ri-honour-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.html" title="Kontakt" class="nav__link active-link">
-                    <i class="ri-send-plane-line"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <?php include "navbar.html" ?>
     <section class="contact section">
         <h2 class="section__title">KONTAKTUJ MĚ</h2>
         <div class="contact__container container grid">
@@ -51,18 +19,14 @@
                     <input type="text" name="user_name" placeholder="Jméno" required class="contact__input">
                     <input type="email" name="user_email" placeholder="Email" required class="contact__input">
                 </div>
-
                 <textarea name="user_message" placeholder="Zpráva" class="contact__input contact__area"></textarea>
-
                 <button type="submit" class="button contact__button">Poslat zprávu</button>
-
                 <p class="contact__message" id="contact-message"></p>
             </form>
         </div>
     </section>
-
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/mail.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/mail.js"></script>
 </body>
 </html>

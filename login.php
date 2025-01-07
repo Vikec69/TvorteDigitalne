@@ -9,39 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class = "nav">
-        <ul class ="nav__list">
-            <li>
-                <a href="index.html" title="Domů" class="nav__link">
-                    <i class="ri-home-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="projects.html" title="Projekty" class="nav__link">
-                    <i class="ri-folder-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="navody.html" title="Návody" class="nav__link">
-                    <i class="ri-file-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="login.html" title="Přihlášení" class="nav__link active-link">
-                    <i class="ri-honour-line"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="contact.html" title="Kontakt" class="nav__link">
-                    <i class="ri-send-plane-line"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
+<?php include "navbar.html"?>
     <div class="login__container">
         <div class="login__content">
             <img src="img/Untitled-2.png" alt="login image" class="login__img">
