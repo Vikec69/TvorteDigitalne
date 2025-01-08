@@ -137,7 +137,7 @@
                 </article>
             </div>
         </section>
-    <?php require "./layout/footer.html" ?>
+    <?php require "./layout/footer.html"; ?>
 </div>
 </body>
 </html>
