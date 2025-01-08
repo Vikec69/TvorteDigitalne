@@ -2,16 +2,17 @@
     <!DOCTYPE html>
     <html lang="cs">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projekty</title>
-        <link rel="icon" href="./img/LOGO/FavIconW.svg">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
-        <link rel="stylesheet" href="css/styles.css">
+    <?php 
+    $nazevstr= "Playlisty";
+    require "./layout/hlava.php";
+    ?>
     </head>
     <body>
+    <?php 
+    $active2 = "active-link";
+    require "./layout/navbar.php";
+    ?>
         <section class="playlist-details section">
-         
             <div class="row">
                <div class="column">
             
@@ -46,7 +47,7 @@
             <h2 class="section__title">Videa v playlistu</h2>
             <div class="projects__container container grid">
                 <article class="projects__card">
-                    <a href="video.html" class="projects__image"><img src="img/pr1.jpg" alt="image" class="projects__img">
+                    <a href="video.php" class="projects__image"><img src="img/pr1.jpg" alt="image" class="projects__img">
                     </a>
         
                     <div class="projects__data">
@@ -58,14 +59,14 @@
                         <img src="img/icons8-adobe_premiere.svg" alt="image" class="projects__skill">
                     </div>
         
-                    <a href="video.html" class="projects__button">
+                    <a href="video.php" class="projects__button">
                         <i class="ri-links-line"></i>
                         <span>Přehrát video</span>
                     </a>
                 </article>
         
                 <article class="projects__card">
-                    <a href="video.html" class="projects__image"><img src="./img/pr2.jpg" alt="image" class="projects__img">
+                    <a href="video.php" class="projects__image"><img src="./img/pr2.jpg" alt="image" class="projects__img">
                     </a>
         
                     <div class="projects__data">
@@ -77,14 +78,14 @@
                         <img src="img/icons8-adobe_premiere.svg" alt="image" class="projects__skill">
                     </div>
         
-                    <a href="video.html" class="projects__button">
+                    <a href="video.php" class="projects__button">
                         <i class="ri-links-line"></i>
                         <span>Přehrát video</span>
                     </a>
                 </article>
         
                 <article class="projects__card">
-                    <a href="video.html" class="projects__image"><img src="./img/pr3.jpg" alt="image" class="projects__img">
+                    <a href="video.php" class="projects__image"><img src="./img/pr3.jpg" alt="image" class="projects__img">
                     </a>
         
                     <div class="projects__data">
@@ -96,13 +97,13 @@
                         <img src="img/icons8-adobe_premiere.svg" alt="image" class="projects__skill">
                     </div>
         
-                    <a href="video.html" class="projects__button">
+                    <a href="video.php" class="projects__button">
                         <i class="ri-links-line"></i>
                         <span>Přehrát video</span>
                     </a>
                 </article>
             </div>
         </section>
-        <?php include "footer.html" ?>
+        <?php require "./layout/footer.html" ?>
 </body>
 </html>

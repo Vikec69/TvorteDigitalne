@@ -1,16 +1,17 @@
    <!DOCTYPE html>
     <html lang="cs">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Video</title>
-        <link rel="icon" href="./img/LOGO/FavIconW.svg">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
-        <link rel="stylesheet" href="css/styles.css">
+    <?php 
+      $nazevstr= "Video";
+      require "./layout/hlava.php";
+    ?>
     </head>
     <body>
+    <?php 
+    $active2 = "active-link";
+    require "./layout/navbar.php";
+    ?>
 <section class="watch-video">
-
     <div class="video-container">
        <div class="video">
           <video src="img/Navrh.mp4" controls poster="images/post-1-1.png" id="video"></video>
@@ -31,7 +32,7 @@
           Naučíte se základní funkce Adobe Premiere Pro a husťárny. Bude to cool a tak víš co, budeme mít kopec srandy a párno.
        </p>
        <form action="" method="post" class="flex">
-         <a href="playlist.html" class="inline-btn">Playlist</a>
+         <a href="playlist.php" class="inline-btn">Playlist</a>
          <button><i class="ri-heart-line"></i><span>Like</span></button>
       </form>
     </div>
@@ -124,6 +125,6 @@
        </div>
     </div>
  </section>
- <?php include "footer.html" ?>
+ <?php require "./layout/footer.html" ?>
 </body>
 </html>

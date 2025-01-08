@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O mně</title>
-    <link rel="icon" href="./img/LOGO/FavIconW.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
-    <link rel="stylesheet" href="css/styles.css">
+<?php 
+    $nazevstr= "Přihlášení";
+    require "./layout/hlava.php";
+    ?>
 </head>
 <body>
-<?php include "navbar.html"?>
+<?php 
+    $active4 = "active-link";
+    require "./layout/navbar.php";
+    ?>
     <div class="login__container">
         <div class="login__content">
             <img src="img/Untitled-2.png" alt="login image" class="login__img">
@@ -46,7 +47,7 @@
                         <button class="login__button login__button-ghost">Registrace</button>
                     </div>
 
-                    <a href="contact.html" class="login__forgot">Zapomněli jste heslo?</a>
+                    <a href="contact.php" class="login__forgot">Zapomněli jste heslo?</a>
                 </div>
             </form>
         </div>

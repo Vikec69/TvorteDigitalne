@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <link rel="icon" href="./img/LOGO/FavIconW.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tvořte Digitálně</title>
+<?php 
+    $nazevstr= "Tvořte Digitálně";
+    require "./layout/hlava.php";
+    ?>
 </head>
 <body>
 <div id="flex-container">
-    <?php include "navbar.html"?>
+    <?php 
+    $active1 = "active-link";
+    require "./layout/navbar.php";
+    ?>
         <section class = "home section">
             <div class="home__container container grid">
                 <div class="profil">
@@ -136,7 +137,7 @@
                 </article>
             </div>
         </section>
-    <?php include "footer.html" ?>
+    <?php require "./layout/footer.html" ?>
 </div>
 </body>
 </html>

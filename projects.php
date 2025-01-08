@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekty</title>
-    <link rel="icon" href="./img/LOGO/FavIconW.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.4.0/remixicon.css">
-    <link rel="stylesheet" href="css/styles.css">
+<?php 
+    $nazevstr= "Projekty";
+    require "./layout/hlava.php";
+    ?>
 </head>
 <body>
 <div id="flex-container">
+<?php 
+    $active2 = "active-link";
+    require "./layout/navbar.php";
+    ?>
     <section class = "projects section">
         <h2 class="section__title">PROJEKTY</h2>
         <div class="projects__container container grid">
@@ -74,7 +76,7 @@
             </article>
         </div>
     </section>
-    <?php include "footer.html" ?>
+    <?php require "./layout/footer.html" ?>
     </div>
 </body>
 </html>
