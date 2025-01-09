@@ -1,3 +1,4 @@
+<?php require "./common.php"; ?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -14,7 +15,7 @@
     <div class="login__container">
         <div class="login__content">
             <img src="img/Untitled-2.png" alt="login image" class="login__img">
-            <form action="" class="login__form">
+            <form method="POST" class="login__form">
                 <div>
                     <h1 class="login__title">
                         <span>Vítejte </span>zpět
@@ -22,15 +23,15 @@
                 </div>
                 <div>
                     <div class="login__inputs">
-                        <label for="" class="login__label">Email</label>
-                        <input type="email" placeholder="Zadejte emailovou adresu" required class="login__input">
+                        <label class="login__label">Jméno uživatele</label>
+                        <input autocomplete="username" type="text" placeholder="Zadejte jméno uživatele" name="usrname" required class="login__input">
                     </div>
 
                     <div class="login__inputs">
-                        <label for="" class="login__label">Heslo</label>
+                        <label class="login__label">Heslo</label>
 
                         <div class="login__box">
-                            <input type="password" placeholder="Zadejte své heslo" required class="login__input" id="input-pass">
+                            <input autocomplete="password" type="password" placeholder="Zadejte své heslo" name="Passwrd" required class="login__input" id="input-pass">
                             <i class="ri-eye-line login__eye" id="input-icon"></i>
                         </div>
                     </div>
@@ -38,13 +39,13 @@
 
                 <div class="login__check">
                     <input type="checkbox" class="login__check-input">
-                    <label for="" class="login__check-label">Zapamatuj si mě</label>
+                    <label class="login__check-label">Zapamatuj si mě</label>
                 </div>
 
                 <div>
                     <div class="login__buttons">
-                        <button class="login__button">Přihlásit se</button>
-                        <button class="login__button login__button-ghost">Registrace</button>
+                        <input type="submit" class="login__button" value="Přihlásit se" name="LOGIN_BUTTON">
+                        <input type="submit" class="login__button login__button-ghost" value="Registrace" name="REG_BUTTON">
                     </div>
 
                     <a href="contact.php" class="login__forgot">Zapomněli jste heslo?</a>
@@ -53,5 +54,49 @@
         </div>
     </div>
     <script src="js/hesla.js"></script>
+<?php 
+    if (isset($_POST["REG_BUTTON"])) {
+    $message = "";
+    try {
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      if ($conn->connect_error) {
+          $message = "Connection failed: ". $conn->connect_error;
+          die();
+      }
+
+      $checkExistingUser = $conn->prepare("SELECT ID FROM users WHERE Username = ?");
+      $checkExistingUser -> bind_param("s", $_POST['usrname'],);
+      $checkExistingUser -> execute();
+      $queryResult = $checkExistingUser -> get_result();
+        if ($queryResult -> num_rows < 1) {
+          $insertUser = $conn -> prepare("INSERT INTO users (Username, Passwrd, Date_Created) VALUES (?, ?, ?)");
+          $hashedPassword = password_hash($_POST['Passwrd'], PASSWORD_BCRYPT);
+          $insertUser -> bind_param("sss", $_POST['usrname'], $hashedPassword, date("d. m. Y"));
+          if ($insertUser -> execute()) {
+            $_SESSION["username"] = $_POST["usrname"];
+            // header("Location: ./index.php", true, 201);
+            header("Location: ./index.php");
+          }else {
+            $message = $insertUser -> error;
+          } 
+        } else {
+          $message = "Uživatel s jménem '". $_POST['usrname'] . "' již má zaregistrovaný účet.";
+        }
+      } 
+     finally {
+        $queryResult->close();
+        $checkExistingUser->close();
+        $insertUser->close();
+        $conn->close();
+      if ($message) {
+        echo '<script>
+                alert("'.addslashes($message).'");
+              </script';
+      }
+  }
+
+}
+?>
 </body>
 </html>
