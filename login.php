@@ -1,4 +1,4 @@
-<?php require "./common.php"; ?>
+<?php require "./bts/odhlasenko.php"; ?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -54,6 +54,9 @@
         </div>
     </div>
     <script src="js/hesla.js"></script>
+
+<!-- REGISTRACE -->
+
 <?php 
     if (isset($_POST["REG_BUTTON"])) {
     $message = "";
@@ -75,24 +78,74 @@
           $insertUser -> bind_param("sss", $_POST['usrname'], $hashedPassword, date("d. m. Y"));
           if ($insertUser -> execute()) {
             $_SESSION["username"] = $_POST["usrname"];
-            // header("Location: ./index.php", true, 201);
             header("Location: ./index.php");
-          }else {
+          }
+          else {
             $message = $insertUser -> error;
           } 
-        } else {
+        } 
+        else {
           $message = "Uživatel s jménem '". $_POST['usrname'] . "' již má zaregistrovaný účet.";
         }
-      } 
-     finally {
+    } 
+    finally {
+        if(isset($insertUser)){
+            $insertUser->close();
+        }
         $queryResult->close();
         $checkExistingUser->close();
-        $insertUser->close();
         $conn->close();
       if ($message) {
         echo '<script>
                 alert("'.addslashes($message).'");
-              </script';
+              </script>';
+      }
+  }
+
+}
+
+// LOGIN
+
+if (isset($_POST["LOGIN_BUTTON"])) {
+    $message = "";
+    try {
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      if ($conn->connect_error) {
+          $message = "Connection failed: ". $conn->connect_error;
+          die();
+      }
+
+      $checkExistingUser = $conn->prepare("SELECT ID,Passwrd FROM users WHERE Username = ?");
+      $checkExistingUser -> bind_param("s", $_POST['usrname'],);
+      $checkExistingUser -> execute();
+      $queryResult = $checkExistingUser -> get_result();
+      $result = $queryResult -> fetch_assoc();
+        if ($queryResult -> num_rows == 1) {
+            if(password_verify($_POST['Passwrd'], $result['Passwrd'])){
+                $_SESSION["username"] = $_POST['usrname'];
+                header("Location: ./");
+            }
+            else {
+                $message = "Špatné přihlašovací údaje sigmo. *wink*";
+              }
+        } 
+        else {
+            $message = "Špatné přihlašovací údaje sigmo. *wink*";
+          }
+        
+    } 
+    finally {
+        if(isset($insertUser)){
+            $insertUser->close();
+        }
+        $queryResult->close();
+        $checkExistingUser->close();
+        $conn->close();
+      if ($message) {
+        echo '<script>
+                alert("'.addslashes($message).'");
+              </script>';
       }
   }
 

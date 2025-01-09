@@ -1,3 +1,4 @@
+<?php require "./bts/common.php"; ?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>

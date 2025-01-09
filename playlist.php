@@ -1,4 +1,4 @@
-<section class="playlist-details">
+<?php require "./bts/common.php"; ?>
     <!DOCTYPE html>
     <html lang="cs">
     <head>
@@ -9,9 +9,10 @@
     </head>
     <body>
     <?php 
-    $active2 = "active-link";
+    $active3 = "active-link";
     require "./layout/navbar.php";
     ?>
+    <section class="playlist-details">
         <section class="playlist-details section">
             <div class="row">
                <div class="column">
@@ -105,5 +106,6 @@
             </div>
         </section>
         <?php require "./layout/footer.html" ?>
+</section>
 </body>
 </html>
