@@ -212,6 +212,7 @@
      .footer__container{
          display: block;
          margin-bottom: 7rem;
+         width: 100%;
      }
  
      .footer__container p{
