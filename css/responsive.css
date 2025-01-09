@@ -204,12 +204,14 @@
  /*==Menší zařízení==*/
  
  @media screen and (max-width: 768px){
+
      .login__buttons{
          flex-direction: column;
      }
  
      .footer__container{
          display: block;
+         margin-bottom: 7rem;
      }
  
      .footer__container p{
@@ -280,7 +282,7 @@
  }
  
  /*==Malé zařízení==*/
- @media screen and (max-width: 320px){
+ @media screen and (min-width: 320px){
      .container{
          margin-inline: 1rem;
      }
