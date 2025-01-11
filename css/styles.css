@@ -790,16 +790,17 @@ body.experience {
      margin-right: auto;
      margin-top: 4rem;
   }
+
+  .playlist-details .row .column .save-playlist button input{
+    background-color: transparent;
+    color:var(--bila-barva);
+    cursor: pointer;
+ }
   
   .playlist-details .row .column .save-playlist button i{
      font-size: 2rem;
      color:var(--bila-barva);
      margin-right: .8rem;
-  }
-  
-  .playlist-details .row .column .save-playlist button span{
-     font-size: 1.8rem;
-     color:var(--bila-barva);
   }
   
   .playlist-details .row .column .save-playlist button:hover{
@@ -810,7 +811,7 @@ body.experience {
      color:var(--prvni-barva);
   }
   
-  .playlist-details .row .column .save-playlist button:hover span{
+  .playlist-details .row .column .save-playlist button:hover input{
      color:var(--cerna-barva);
   }
   

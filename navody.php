@@ -1,4 +1,8 @@
-<?php require "./bts/common.php"; ?>
+<?php 
+require "./bts/common.php"; 
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+$playlistData = $conn -> query("SELECT * FROM `playlist`");
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -16,21 +20,28 @@
 <section class = "projects section">
     <h2 class="section__title">Návody</h2>
     <div class="projects__container container grid">
-        <article class="projects__card">
-            <a href="playlist.php" class="projects__image"><img src="img/pr thumb.jpg" alt="image" class="projects__img">
-            </a>
-            <div class="projects__data">
-                <h3 class="projects__name">Základy v Adobe Premiere Pro</h3>
-                <p class="projects__description">Vysvětlení zákaldních funkcí.</p>
-            </div>
-            <div class="projects__skills">
-                <img src="img/icons8-adobe_premiere.svg" alt="image" class="projects__skill">
-            </div>
-            <a href="playlist.php" class="projects__button">
-                <i class="ri-links-line"></i>
-                <span>Navštívit playlist</span>
-            </a>
-        </article>
+<?php 
+if($playlistData->num_rows > 0){
+    while($row = $playlistData->fetch_assoc()) {
+        echo'<article class="projects__card">
+                <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__image"><img src="' . $row["PlThumbnail"] . '" alt="thumbnail" class="projects__img">
+                </a>
+                <div class="projects__data">
+                    <h3 class="projects__name">'
+                        . $row["PlName"] . '
+                    </h3>
+                    <p class="projects__description">' . $row["Description"] . '</p>
+                </div>
+                <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__button">
+                    <i class="ri-links-line"></i>
+                    <span>Navštívit playlist</span>
+                </a>
+            </article>';
+    }
+} else {
+    echo "0 výsledků";
+}
+        ?>
     </div>
 </section>
 <?php require "./layout/footer.html" ?>
