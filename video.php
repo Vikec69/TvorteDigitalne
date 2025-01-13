@@ -7,15 +7,21 @@
       $nazevstr= "Video";
       require "./layout/hlava.php";
       $conn = mysqli_connect($servername, $username, $password, $dbname);
-      $playlistData = $conn -> prepare("SELECT * FROM `videa` WHERE ID = ?");
-      $playlistData -> bind_param("i",$_GET['VideoID']);
-      $playlistData -> execute();
-      $queryResult = $playlistData -> get_result();
-      $result = $queryResult -> fetch_assoc();
+      $VideoData = $conn -> prepare("SELECT * FROM `videa` WHERE ID = ?");
+      $VideoData -> bind_param("i",$_GET['VideoID']);
+      $VideoData -> execute();
+      $queryresult = $VideoData -> get_result();
+      $result = $queryresult -> fetch_assoc();
+      $UserData = $conn -> prepare("SELECT * FROM `users` WHERE Username = ?");
+      $UserData -> bind_param("s",$result['UploadedBy']);
+      $UserData -> execute();
+      $queryresult = $UserData -> get_result();
+      $UserResult = $queryresult-> fetch_assoc();
    }
    finally{
       $conn -> close();
-      $playlistData -> close();
+      $VideoData -> close();
+      $UserData -> close();
    }
     ?>
     </head>
@@ -27,25 +33,24 @@
 <section class="watch-video">
     <div class="video-container">
        <div class="video">
-          <video src="img/Navrh.mp4" controls poster="images/post-1-1.png" id="video"></video>
+          <video src="<?php echo $result['Location'] ?>" controls poster="./img/pr thumb.jpg" id="video"></video>
        </div>
-       <h3 class="title"></h3>
+       <h3 class="title"><?php echo $result['VidName'] ?></h3>
        <div class="stats">
-          <p class="date"><i class="ri-calendar-line"></i><span>09. 12. 2024</span></p>
+          <p class="date"><i class="ri-calendar-line"></i><span><?php echo $result['DateUploaded'] ?></span></p>
           <p class="date"><i class="ri-heart-line"></i><span>69 lajků</span></p>
        </div>
        <div class="tutor">
-          <img src="img/pfp.jpg" alt="">
+          <img src="<?php echo $UserResult['ProfilePic'] ?>" alt="">
           <div>
-             <h3>Viktor Červenka</h3>
-             <span>og</span>
+             <h3><?php echo $result['UploadedBy'] ?></h3>
           </div>
        </div>
        <p class="description">
-          Naučíte se základní funkce Adobe Premiere Pro a husťárny. Bude to cool a tak víš co, budeme mít kopec srandy a párno.
+       <?php echo $result['Description'] ?>
        </p>
        <form action="" method="post" class="flex">
-         <a href="playlist.php" class="inline-btn">Playlist</a>
+         <a href="playlist.php?PlaylistID=<?php echo $result['Playlist'] ?>" class="inline-btn">Playlist</a>
          <button><i class="ri-heart-line"></i><span>Like</span></button>
       </form>
     </div>
