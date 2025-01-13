@@ -6,6 +6,11 @@ require "./bts/common.php";
     $playlistData -> execute();
     $queryResult = $playlistData -> get_result();
     $result = $queryResult -> fetch_assoc();
+    $UserData = $conn -> prepare("SELECT * FROM `users` WHERE Username = ?");
+    $UserData -> bind_param("s",$result['CreatedBy']);
+    $UserData -> execute();
+    $queryresult = $UserData -> get_result();
+    $UserResult = $queryresult-> fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -45,12 +50,14 @@ require "./bts/common.php";
                   </div>
 
                   <div class="tutor">
-                   <img src="img/pfp.jpg" alt="">
+                   <img src="<?php echo $UserResult['ProfilePic']?>" alt="">
                      <div>
                         <h3><?php                     
                         echo $result["CreatedBy"];
                     ?></h3>
-                        <span>09. 12. 2024</span>
+                        <span><?php                     
+                        echo $result["CreatedAt"];
+                    ?></span>
                      </div>
                   </div>
 
@@ -61,7 +68,12 @@ require "./bts/common.php";
                  if(isset($_POST['SavePlaylist'])){
                     if($_SESSION["username"] != null){
                         $playlistsSaved = explode(",", mysqli_fetch_assoc($conn -> query("SELECT Pl_Saved FROM users WHERE Username = '".$_SESSION["username"]."'"))["Pl_Saved"]);      
+                        if(in_array($result["ID"], $playlistsSaved)){
+                            unset($playlistsSaved[array_search($result["ID"], $playlistsSaved)]);
+                        }
+                        else{
                         $playlistsSaved[] = (string) $result["ID"];
+                        }
                         $playlistsSaved = implode(",", $playlistsSaved);
                         $conn -> query("UPDATE users SET Pl_Saved = '".$playlistsSaved."' WHERE Username = '".$_SESSION["username"]."'");
                     }
@@ -107,6 +119,10 @@ require "./bts/common.php";
         require "./layout/footer.html";
         if(isset($playlistData)){    
             $playlistData -> close();
+        }
+
+        if(isset($UserData)){
+            $UserData -> close();
         }
         $conn -> close();
         ?>

@@ -17,6 +17,11 @@
       $UserData -> execute();
       $queryresult = $UserData -> get_result();
       $UserResult = $queryresult-> fetch_assoc();
+      $Komentare = $conn -> prepare("SELECT * FROM `komentare` WHERE VIDEO_ID = ?");
+      $Komentare -> bind_param("i",$_GET['VideoID']);
+      $Komentare -> execute();
+      $KomentareResult = $Komentare -> get_result();
+      $pocetkom = $KomentareResult -> num_rows;
    }
    finally{
       $conn -> close();
@@ -59,7 +64,10 @@
  
  <section class="comments">
  
-    <h1 class="heading"># Komentářů</h1>
+    <h1 class="heading">
+      <?php 
+      echo $pocetkom . "# Komentářů"
+                        ?></h1>
  
     <form action="" class="add-comment">
        <h3>Přidat komentář</h3>
@@ -93,53 +101,6 @@
           </div>
           <div class="comment-box">awesome tutorial!
              keep going!</div>
-       </div>
- 
-       <div class="box">
-          <div class="user">
-             <img src="img/pfp.jpg" alt="">
-             <div>
-                <h3>swag</h3>
-                <span>09. 12. 2024</span>
-             </div>
-          </div>
-          <div class="comment-box">amazing way of teaching!
-             thank you so much!
-          </div>
-       </div>
- 
-       <div class="box">
-          <div class="user">
-             <img src="img/pfp.jpg" alt="">
-             <div>
-                <h3>hovnival</h3>
-                <span>09. 12. 2024</span>
-             </div>
-          </div>
-          <div class="comment-box">loved it, thanks for the tutorial!</div>
-       </div>
- 
-       <div class="box">
-          <div class="user">
-             <img src="img/pfp.jpg" alt="">
-             <div>
-                <h3>john pork</h3>
-                <span>09. 12. 20242</span>
-             </div>
-          </div>
-          <div class="comment-box">this is what I have been looking for! thank you so much!</div>
-       </div>
-       <div class="box">
-          <div class="user">
-             <img src="img/pfp.jpg" alt="">
-             <div>
-                <h3>Meatball Martin</h3>
-                <span>09. 12. 2024</span>
-             </div>
-          </div>
-          <div class="comment-box">thanks for the tutorial!
-             how to download source code file?
-          </div>
        </div>
     </div>
  </section>
