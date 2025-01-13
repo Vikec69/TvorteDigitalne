@@ -3,8 +3,20 @@
     <html lang="cs">
     <head>
     <?php 
+    try{
       $nazevstr= "Video";
       require "./layout/hlava.php";
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+      $playlistData = $conn -> prepare("SELECT * FROM `videa` WHERE ID = ?");
+      $playlistData -> bind_param("i",$_GET['VideoID']);
+      $playlistData -> execute();
+      $queryResult = $playlistData -> get_result();
+      $result = $queryResult -> fetch_assoc();
+   }
+   finally{
+      $conn -> close();
+      $playlistData -> close();
+   }
     ?>
     </head>
     <body>
@@ -17,7 +29,7 @@
        <div class="video">
           <video src="img/Navrh.mp4" controls poster="images/post-1-1.png" id="video"></video>
        </div>
-       <h3 class="title">Základní nástroje Adobe Premiere Pro</h3>
+       <h3 class="title"></h3>
        <div class="stats">
           <p class="date"><i class="ri-calendar-line"></i><span>09. 12. 2024</span></p>
           <p class="date"><i class="ri-heart-line"></i><span>69 lajků</span></p>

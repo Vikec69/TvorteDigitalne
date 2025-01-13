@@ -1,21 +1,21 @@
 <?php 
 require "./bts/common.php"; 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-$playlistData = $conn -> prepare("SELECT * FROM `playlist` WHERE ID = ?");
-$playlistData -> bind_param("i",$_GET['PlaylistID']);
-$playlistData -> execute();
-$queryResult = $playlistData -> get_result();
-$result = $queryResult -> fetch_assoc();
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $playlistData = $conn -> prepare("SELECT * FROM `playlisty` WHERE ID = ?");
+    $playlistData -> bind_param("i",$_GET['PlaylistID']);
+    $playlistData -> execute();
+    $queryResult = $playlistData -> get_result();
+    $result = $queryResult -> fetch_assoc();
 ?>
-    <!DOCTYPE html>
-    <html lang="cs">
-    <head>
-    <?php 
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<?php 
     $nazevstr= "Playlisty";
     require "./layout/hlava.php";
-    ?>
-    </head>
-    <body>
+?>
+</head>
+<body>
     <?php 
     $active3 = "active-link";
     require "./layout/navbar.php";
@@ -103,7 +103,13 @@ $result = $queryResult -> fetch_assoc();
                 ?>
             </div>
         </section>
-        <?php require "./layout/footer.html" ?>
+        <?php 
+        require "./layout/footer.html";
+        if(isset($playlistData)){    
+            $playlistData -> close();
+        }
+        $conn -> close();
+        ?>
 </section>
 </body>
 </html>

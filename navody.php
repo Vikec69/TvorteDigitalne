@@ -1,7 +1,7 @@
 <?php 
 require "./bts/common.php"; 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-$playlistData = $conn -> query("SELECT * FROM `playlist`");
+$playlistData = $conn -> query("SELECT * FROM `playlisty`");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -44,7 +44,10 @@ if($playlistData->num_rows > 0){
         ?>
     </div>
 </section>
-<?php require "./layout/footer.html" ?>
+<?php require "./layout/footer.html";
+    $conn -> close();
+    $playlistData -> close();
+?>
 </div>
 </body>
 </html>
