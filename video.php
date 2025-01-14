@@ -32,7 +32,7 @@
     </head>
     <body>
     <?php 
-    $active2 = "active-link";
+    $active3 = "active-link";
     require "./layout/navbar.php";
     ?>
 <section class="watch-video">
