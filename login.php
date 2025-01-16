@@ -59,7 +59,7 @@
 
 <?php 
     if (isset($_POST["REG_BUTTON"])) {
-    $message = "";
+        $message = "";
     try {
       $conn = new mysqli($servername, $username, $password, $dbname);
 
