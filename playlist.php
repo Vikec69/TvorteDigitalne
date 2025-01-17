@@ -25,11 +25,10 @@ require "./bts/common.php";
     $active3 = "active-link";
     require "./layout/navbar.php";
     ?>
-    <section class="playlist-details">
-        <section class="playlist-details section">
+<section class="playlist-details">
+    <section class="playlist-details ">
             <div class="row">
                <div class="column">
-            
                   <div class="thumb">
                      <img src="<?php echo $result['PlThumbnail']?>" alt="">
                      <span><?php 
@@ -62,7 +61,7 @@ require "./bts/common.php";
                   </div>
 
                 <form method="post" class="save-playlist">
-                    <button> <i class="ri-bookmark-line"></i><input name = "SavePlaylist" type="submit" value = "Uložit playlist"></button>
+                    <button name = "SavePlaylist" type="submit"><i class="ri-bookmark-line"></i>Uložit playlist</button>
                  </form>
                  <?php
                  if(isset($_POST['SavePlaylist'])){
@@ -84,8 +83,7 @@ require "./bts/common.php";
                  ?>
                </div>
             </div>
-         </section>
-         
+    </section> 
          <section class = "projects section">
             <h2 class="section__title">Videa v playlistu</h2>
             <div class="projects__container container grid">

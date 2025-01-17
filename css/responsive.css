@@ -334,7 +334,7 @@
       .playlist-details .row .column .save-playlist button{
          border-radius: .5rem;
          background-color: var(--prvni-barva);
-         padding:0.5rem rem;
+         padding:0.8rem;
          cursor: pointer;
          transition: background-color .4s;
          display: block;

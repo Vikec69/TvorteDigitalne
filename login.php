@@ -36,19 +36,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="login__check">
-                    <input type="checkbox" class="login__check-input">
-                    <label class="login__check-label">Zapamatuj si mě</label>
-                </div>
-
                 <div>
                     <div class="login__buttons">
                         <input type="submit" class="login__button" value="Přihlásit se" name="LOGIN_BUTTON">
                         <input type="submit" class="login__button login__button-ghost" value="Registrace" name="REG_BUTTON">
                     </div>
-
-                    <a href="contact.php" class="login__forgot">Zapomněli jste heslo?</a>
+                    <a href="./contact.php" class="login__forgot">Zapomněli jste heslo?</a>
                 </div>
             </form>
         </div>

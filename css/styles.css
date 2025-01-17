@@ -28,7 +28,6 @@
     /*Text*/
     /*1rem = 16px*/
     --body-font: "Montserrat", sans-serif;
-    --druhy-font: "Playfair Display";
     --max-velikost: 2.5rem;
     --h1-velikost: 1.5rem;
     --h2-velikost: 1.25rem;
@@ -222,13 +221,13 @@ background-color: var(--prvni-barva-alt);
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    max-width: 93%;
+    max-width: 91.5%;
     padding-bottom: 1rem;
 }
 
 .footer__logo{
     color: var(--bila-barva);
-    font: var(--font-regular) var(--max-velikost) var(--druhy-font);
+    font: var(--font-regular) var(--max-velikost) var(--body-font);
 }
 
 .footer__social{
@@ -269,10 +268,10 @@ background-color: var(--prvni-barva-alt);
 }
 
 .profil__img{
-    width: 450px;
     position:absolute;
     justify-self: center;
     align-self: flex-end;
+    max-width: 700px;
 }
 
 .profil__data{
@@ -330,7 +329,7 @@ background-color: var(--prvni-barva-alt);
 
 .info__image{
     background: var(--prechod);
-    height: 180px;
+    height: 240px;
     border-radius: 2rem;
     display:grid;
     margin-block: 1.5rem;
@@ -338,9 +337,10 @@ background-color: var(--prvni-barva-alt);
 }
 
 .info__img{
-    width: 140px;
+    width: 180px;
     justify-self: center;
     align-self: flex-end;
+    padding: 2rem
 }
 
 .info__description{
@@ -782,20 +782,15 @@ body.experience {
   .playlist-details .row .column .save-playlist button{
      border-radius: .5rem;
      background-color: var(--prvni-barva);
-     padding:1rem 1.5rem;
+     padding: 1rem 1.5rem;
      cursor: pointer;
      transition: background-color .4s;
      display: block;
      margin-left: auto;
      margin-right: auto;
      margin-top: 4rem;
+     color:var(--bila-barva);
   }
-
-  .playlist-details .row .column .save-playlist button input{
-    background-color: transparent;
-    color:var(--bila-barva);
-    cursor: pointer;
- }
   
   .playlist-details .row .column .save-playlist button i{
      font-size: 2rem;
@@ -805,6 +800,7 @@ body.experience {
   
   .playlist-details .row .column .save-playlist button:hover{
      background-color: var(--bila-barva);
+     color:var(--cerna-barva)
   }
   
   .playlist-details .row .column .save-playlist button:hover i{
@@ -1138,7 +1134,8 @@ body.experience {
     display: grid;
     gap: 2.5rem;
     background-color: var(--body-barva);
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     border-radius: .5rem;
  }
  
@@ -1192,4 +1189,16 @@ body.experience {
  .inline-delete-btn:hover{
    background-color: var(--bila-barva);
    color: var(--cerna-barva);
+ }
+
+ .pfp__label{
+    text-align: center;
+    margin-bottom: 1rem;
+ }
+
+ .pfp__upload{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
  }

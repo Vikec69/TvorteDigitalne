@@ -16,12 +16,12 @@
         <section class = "home section">
             <div class="home__container container grid">
                 <div class="profil">
-                    <img src="img/LOGO/TvorteDigitalne.svg" style="filter: invert(); margin-left: auto; margin-right: auto;">
+                    <img src="./img/ja/toottoot2.png" class="profil__img">
                     <div class="profil__data">
                         <h1 class="profil__name">Tvořte Digitálně</h1>
                         <div class="profil__buttons">
-                            <a href="projects.html" class="button">Projekty</a>
-                            <a href="navody.html" class="button button__black">Návody</a>
+                            <a href="./projects.php" class="button">Projekty</a>
+                            <a href="./navody.php" class="button button__black">Návody</a>
                         </div>
                     </div>
                 </div>
@@ -30,12 +30,12 @@
                         <h1 class="info__name">Začněte hned teď!</h1>
                     </div>
                     <div class="info__image">
-                        <img src="img/skellyboyspin.gif" alt="image" class="info__img">
+                        <img src="./img/LOGO/TvorteDigitalne.svg" style="filter: invert();" alt="image" class="info__img">
                     </div>
                     <p class="info__description">
                     Inspirace, návody a tipy, které vás provedou světem focení, natáčení a úprav, aby vaše tvorba byla vždy profesionální a jedinečná
                     </p>
-                    <a href="video.html" class="button button__black">Reklamní video</a>
+                    <a href="./video.php?VideoID=3" class="button button__black">Reklamní video</a>
                 </div>
                 <div class="about">
                     <h3 class="about__name">
@@ -58,12 +58,12 @@
                         </a>
                     </div>
                     <div class="about__image">
-                        <img src="img/skellyboycheezit.gif" alt="image" class="about__img">
+                        <img src="./img/ja/toottooot.png" alt="image" class="about__img">
                     </div>
                     <p class="about__note">
                         Nejsem aktivní na socialních sítích, napište mi skrze stránku.
                     </p>
-                    <a href="contact.html" class="button">Napiš mi</a>
+                    <a href="./contact.php" class="button">Napiš mi</a>
                 </div>
                     <div class="skills">
                         <h2 class="skills__title">ZKUŠENOSTI</h2>
