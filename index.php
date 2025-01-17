@@ -30,7 +30,7 @@
                         <h1 class="info__name">Začněte hned teď!</h1>
                     </div>
                     <div class="info__image">
-                        <img src="img/skelly boy spin.gif" alt="image" class="info__img">
+                        <img src="img/skellyboyspin.gif" alt="image" class="info__img">
                     </div>
                     <p class="info__description">
                     Inspirace, návody a tipy, které vás provedou světem focení, natáčení a úprav, aby vaše tvorba byla vždy profesionální a jedinečná
@@ -58,7 +58,7 @@
                         </a>
                     </div>
                     <div class="about__image">
-                        <img src="img/skelly boy cheezit.gif" alt="image" class="about__img">
+                        <img src="img/skellyboycheezit.gif" alt="image" class="about__img">
                     </div>
                     <p class="about__note">
                         Nejsem aktivní na socialních sítích, napište mi skrze stránku.

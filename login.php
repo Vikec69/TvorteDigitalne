@@ -116,14 +116,14 @@ if (isset($_POST["LOGIN_BUTTON"])) {
           die();
       }
 
-      $checkExistingUser = $conn->prepare("SELECT ID,Passwrd FROM users WHERE Username = ?");
+      $checkExistingUser = $conn->prepare("SELECT ID,Passwrd,Username FROM users WHERE Username = ?");
       $checkExistingUser -> bind_param("s", $_POST['usrname'],);
       $checkExistingUser -> execute();
       $queryResult = $checkExistingUser -> get_result();
       $result = $queryResult -> fetch_assoc();
         if ($queryResult -> num_rows == 1) {
             if(password_verify($_POST['Passwrd'], $result['Passwrd'])){
-                $_SESSION["username"] = $_POST['usrname'];
+                $_SESSION["username"] = $result["Username"];
                 header("Location: ./");
             }
             else {

@@ -33,6 +33,7 @@
        alert("Byli jste odhlášeni");
         </script>';
         session_destroy();
+        header("refresh:0");
     }
     ?>
 </body>
