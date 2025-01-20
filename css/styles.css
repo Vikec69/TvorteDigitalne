@@ -1202,3 +1202,39 @@ body.experience {
     margin-left: auto;
     margin-bottom: 1rem;
  }
+
+.tabulkos{
+    width: 250px;
+    text-align: center;
+    margin: auto;
+}
+
+.tabulkos thead tr th{
+    border-top: none;
+    border-bottom: none;
+    color: #fff; 
+}
+
+.tabulkos tbody tr, .tabulkos tbody td{
+    color: #777;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+}
+
+.tabulkos tbody tr td {
+    background: #25252b;
+    border: none;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+
+.tabulkos tbody tr .name{
+    color: #b3b3b3;
+    font-weight: 300; }
+
+.tabulkos tbody tr:hover th, .tabulkos tbody tr:hover td {
+    color: #fff;
+    background: #2e2e36; }
+

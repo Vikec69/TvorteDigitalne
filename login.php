@@ -14,7 +14,7 @@
     ?>
     <div class="login__container">
         <div class="login__content">
-            <img src="img/Untitled-2.png" alt="login image" class="login__img">
+            <img src="img/6073424.jpg" alt="login image" class="login__img">
             <form method="POST" class="login__form">
                 <div>
                     <h1 class="login__title">

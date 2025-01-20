@@ -138,6 +138,31 @@
                 </article>
             </div>
         </section>
+<section>
+<h2 style="margin-bottom: 2rem; text-align: center;">Mé služby - Ceník</h2>
+    <table class="tabulkos" style = "margin-bottom: 2rem">
+        <thead>
+            <tr>
+                <th>Název</th>
+                <th>Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">Úprava fotek</td>
+                <td>300 Kč / 10 ks</td>
+            </tr>
+            <tr>
+                <td class="name">Focení</td>
+                <td>400 Kč / 1 hod</td>
+            </tr>
+            <tr>
+                <td class="name">Střih videa</td>
+                <td>600 Kč / 30 min</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <?php require "./layout/footer.html"; ?>
 </div>
 </body>
