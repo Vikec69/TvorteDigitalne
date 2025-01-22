@@ -22,8 +22,8 @@ $playlistData = $conn -> query("SELECT * FROM `playlisty`");
     <h2 class="section__title">Návody</h2>
 
     <form method="GET" action="" style="display:flex; justify-content: center; gap: 1.5rem;">
-        <button type="submit" name="filter" class="login__button" style="width:10%;" value="all">Všechny playlisty</button>
-        <button type="submit" name="filter" class="login__button login__button-ghost" style="width:10%" value="user">Moje playlisty</button>
+        <button type="submit" name="filter" class="login__button" style="width:auto;" value="all">Všechny playlisty</button>
+        <button type="submit" name="filter" class="login__button login__button-ghost" style="width:auto;" value="user">Moje playlisty</button>
     </form>
 
     <div class="projects__container container grid">
