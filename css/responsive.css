@@ -234,6 +234,7 @@
  .footer__content{
      column-gap: 4.5rem;
  }
+
  }
  
  @media screen and (max-width: 1200px){
@@ -243,11 +244,19 @@
          transform: translateY(-50%);
          top: 50%;
      }
+
+    .responsive{
+        width:100%;
+    }
  
  }
  
  /*==Velké zařízení==*/
  @media screen and (min-width: 1200px){
+    .responsive{
+        width:100%;
+    }
+
      .login__container{
          height: 100vh;
          display: grid;
@@ -280,6 +289,9 @@
  /*==Malé zařízení==*/
  @media screen and (min-width: 320px){
 
+    .responsive{
+        width:82%;
+    }
 
      .container{
          margin-inline: 1rem;
@@ -400,7 +412,11 @@
  /*==Velké zařízení==*/
  
  @media screen and (min-width: 1200px){
-     .container{
+    .responsive{
+        width:100%;
+    } 
+    
+    .container{
          margin-inline: auto;
      }
  

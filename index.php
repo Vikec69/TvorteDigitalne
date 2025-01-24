@@ -140,7 +140,7 @@
         </section>
 <section>
 <h2 style="margin-bottom: 2rem; text-align: center;">Mé služby - Ceník</h2>
-    <table class="tabulkos" style = "margin-bottom: 2rem">
+    <table class="tabulkos" style = "margin-bottom: 2rem;">
         <thead>
             <tr>
                 <th>Název</th>

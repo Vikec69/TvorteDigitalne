@@ -31,7 +31,7 @@ finally{
         <div class="login__content">
             <img src="img/6073424.jpg" alt="login image" class="login__img">
             <form method="POST" class="login__form">
-                <div>
+                <div class="responsive">
                     <form action="upload.php" method="post" enctype="multipart/form-data">
                         <h2 class="pfp__label">Změna profilového obrázku</h2>
                         <img src="<?php echo $userpic ?>" style="height: 120px; width: 120px; border-radius: 50%; object-fit: cover;" class="pfp__upload" alt="profile_picture">

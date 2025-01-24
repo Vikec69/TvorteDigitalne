@@ -73,7 +73,7 @@ require "./bts/common.php";
                         else{
                         $playlistsSaved[] = (string) $result["ID"];
                         }
-                        $playlistsSaved = implode(",", $playlistsSaved);
+                        $playlistsSaved = ltrim(implode(",", $playlistsSaved), ",");
                         $conn -> query("UPDATE users SET Pl_Saved = '".$playlistsSaved."' WHERE Username = '".$_SESSION["username"]."'");
                     }
                     else{
