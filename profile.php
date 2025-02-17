@@ -6,6 +6,7 @@
     $nazevstr= "Profil";
     require "./layout/hlava.php";
 
+    // Připojení k databázi
 try{
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $userpiQ = $conn -> prepare("SELECT ProfilePic FROM users WHERE Username = ?");
@@ -22,6 +23,7 @@ finally{
 }
     ?>
 </head>
+<!-- Změna profilového obrázku -->
 <body>
 <?php 
     $active4 = "active-link";
@@ -47,6 +49,7 @@ finally{
     </div>
     <script src="js/hesla.js"></script>
 
+    <!-- Tlačítko na odhlášení -->
     <?php
     if(isset($_POST['LOGOUT_BUTTON'])){
        $_SESSION["username"] = null;

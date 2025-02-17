@@ -21,6 +21,8 @@ $activeFilter = $_GET['filter'] ?? 'all';
 <section class="projects section">
     <h2 class="section__title">Návody</h2>
     <?php
+
+// Tlačítka na filtrování playlistů
     if($_SESSION["username"] != null){
         $usersi = $conn -> query("SELECT Pl_Saved From users WHERE Username = '". $_SESSION['username'] ."'");
         $emocigan = $usersi -> fetch_assoc();
@@ -39,6 +41,8 @@ $activeFilter = $_GET['filter'] ?? 'all';
     ?>
     <div class="projects__container container grid">
 <?php 
+
+// Všechny playlisty
 if($activeFilter == "all"){
     if ($playlistData->num_rows > 0) {
         while ($row = $playlistData->fetch_assoc()) {
@@ -61,6 +65,8 @@ if($activeFilter == "all"){
         echo "<p>Žádné playlisty nebyly nalezeny.</p>";
     }
 }
+
+// User playlisty
 else{
     if (count($tnt) != 0) {
         foreach ($tnt as $playlist) {

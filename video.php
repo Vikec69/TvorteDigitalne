@@ -9,7 +9,7 @@
        $videoID = $_GET["VideoID"];
        $conn = mysqli_connect($servername, $username, $password, $dbname);
        $VideoData = $conn -> prepare("SELECT * FROM `videa` WHERE ID = ?");
-       $VideoData -> bind_param("i",$_GET['VideoID']);
+       $VideoData -> bind_param("i", $videoID);
        $VideoData -> execute();
        $queryresult = $VideoData -> get_result();
        $result = $queryresult -> fetch_assoc();

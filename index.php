@@ -13,6 +13,8 @@
     $active1 = "active-link";
     require "./layout/navbar.php";
     ?>
+
+    <!-- Hlavní showcase -->
         <section class = "home section">
             <div class="home__container container grid">
                 <div class="profil">
@@ -81,6 +83,8 @@
                     </div>
             </div>
         </section>
+
+        <!-- Co najdete na mé stránce -->
         <section class="knowledge section">
             <h2 class="section__title">CO ZDE NAJDETE?</h2>
             <div class="knowledge__container container grid">
@@ -116,6 +120,8 @@
                 </article>
             </div>
         </section>
+
+        <!-- Zkušenosti -->
         <section class="experience section">
             <h2 class="section__title">ZKUŠENOSTI NEBO PRÁCE</h2>
         
@@ -139,6 +145,8 @@
             </div>
         </section>
 <section>
+
+<!-- Tabulka s ceníkem -->
 <h2 style="margin-bottom: 2rem; text-align: center;">Mé služby - Ceník</h2>
     <table class="tabulkos" style = "margin-bottom: 2rem;">
         <thead>

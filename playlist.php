@@ -25,6 +25,8 @@ require "./bts/common.php";
     $active3 = "active-link";
     require "./layout/navbar.php";
     ?>
+
+<!-- Informace o playlistu -->
 <section class="playlist-details">
     <section class="playlist-details ">
             <div class="row">
@@ -60,6 +62,7 @@ require "./bts/common.php";
                      </div>
                   </div>
 
+                  <!-- Tlačítko na uložení playlistu -->
                 <form method="post" class="save-playlist">
                     <button name = "SavePlaylist" type="submit"><i class="ri-bookmark-line"></i>Uložit playlist</button>
                  </form>
@@ -83,6 +86,7 @@ require "./bts/common.php";
                  ?>
                </div>
             </div>
+            <!-- Obsah playlistu -->
     </section> 
          <section class = "projects section">
             <h2 class="section__title">Videa v playlistu</h2>
