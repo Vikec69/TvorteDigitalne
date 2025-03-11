@@ -36,9 +36,9 @@ require "./bts/common.php";
         $UserData->bind_param("s", $_SESSION["username"]);
         $UserData->execute();
         $queryresult = $UserData->get_result();
-        $UserResult = $queryresult->fetch_assoc();  
+        $UserResult = $queryresult->fetch_assoc();
 
-         // Získání dat o uživatelském profilu nahrávače
+         // Získání dat o uživatelském profilu vikeca
          $uploaderData = $conn->prepare("
             SELECT users.Username, users.ProfilePic
             FROM users
@@ -69,8 +69,8 @@ require "./bts/common.php";
         if (isset($_POST["addcomment"])) {
             if ($_SESSION["username"] != null) {
                 $insertcom = $conn->prepare("INSERT INTO komentare (Content, WrittenBy, DateWritten, VIDEO_ID) VALUES (?,?,?,?)");
-                $today = date("d. m. Y");
-                $insertcom->bind_param("sssi", $_POST['add_comment'], $_SESSION['username'], $today, $_GET["VideoID"]);
+                $today = date("Y-m-d");
+                $insertcom->bind_param("sisi", $_POST['add_comment'], $UserResult["ID"] , $today, $_GET["VideoID"]);
                 $insertcom->execute();
                 header("Refresh:0");
             } else {
@@ -123,7 +123,9 @@ require "./layout/navbar.php";
 <section class="watch-video">
     <div class="video-container">
         <div class="video">
-            <video src="<?php echo $result['Location'] ?>" controls poster="<?php echo $result['Thumbnail'] ?>" width="1920" height="1080" id="video"></video>
+            <video controls poster="<?php echo $result['Thumbnail']?>" id="video">
+                <source src="<?php echo $result['Location']?>" type="video/mp4" />
+            </video>
         </div>
         <h3 class="title"><?php echo $result['VidName'] ?></h3>
         <div class="stats">
@@ -148,7 +150,18 @@ require "./layout/navbar.php";
 
 <section class="comments">
     <h1 class="heading">
-        <?php echo $pocetkom . " # Komentářů" ?></h1>
+        <?php
+        $koment = "komentářů";
+        if ($pocetkom == 0) {
+           $koment = "komentářů";
+       } else if ($pocetkom == 1) {
+           $koment = "komentář";
+       }
+       else if ($pocetkom <= 4) {
+        $koment = "komentáře";
+     } 
+        echo $pocetkom . " " . $koment
+        ?></h1>
     <form method="POST" class="add-comment">
         <h3>Přidat komentář</h3>
         <textarea type="text" name="add_comment" placeholder="Přidat komentář" required maxlength="1000" cols="30" rows="10" style="color:white"></textarea>
@@ -159,7 +172,7 @@ require "./layout/navbar.php";
     try {
         while ($Komentar = $KomentareResult->fetch_assoc()) {
             // Pokud není profilový obrázek, použijeme výchozí
-            $userpic = $Komentar["ProfilePic"] ? $Komentar["ProfilePic"] : "./img/default-profile.png";
+            $userpic = $Komentar["ProfilePic"] ? $Komentar["ProfilePic"] : "./img/navrh.gif";
             $username = $Komentar["Username"] ? $Komentar["Username"] : $Komentar["WrittenBy"];
 
             echo '
@@ -173,7 +186,7 @@ require "./layout/navbar.php";
                         </div>
                     </div>
                     <div class="comment-box">'. $Komentar["Content"] .'</div>';
-                    if($Komentar["WrittenBy"] == $_SESSION["username"]) {
+                    if($Komentar["WrittenBy"] == $UserResult["ID"] ) {
                         echo '
                         <form method="POST" class="flex-btn">
                             <input type="submit" value="Odstranit komentář" name="delete_comment" class="inline-delete-btn">

@@ -966,6 +966,7 @@ body.experience {
 }
 
 /*==VIDEA==*/
+
 .watch-video .video-container{
     background-color: var(--body-barva);
     border-radius: .5rem;
@@ -981,8 +982,10 @@ body.experience {
  .watch-video .video-container .video video{
     border-radius: .5rem;
     width: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit:cover;
     background-color: #000;
+    background-size: cover;
  }
  
  .watch-video .video-container .title{
