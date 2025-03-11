@@ -1,8 +1,10 @@
 <?php 
 require "./bts/common.php"; 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-$playlistData = $conn -> query("SELECT * FROM `playlisty`");
 $activeFilter = $_GET['filter'] ?? 'all';
+
+// Získání všech playlistů
+$playlistData = $conn->query("SELECT * FROM `playlisty`");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -21,21 +23,11 @@ $activeFilter = $_GET['filter'] ?? 'all';
 <section class="projects section">
     <h2 class="section__title">Návody</h2>
     <?php
-
-// Tlačítka na filtrování playlistů
-    if($_SESSION["username"] != null){
-        $usersi = $conn -> query("SELECT Pl_Saved From users WHERE Username = '". $_SESSION['username'] ."'");
-        $emocigan = $usersi -> fetch_assoc();
-        if($emocigan["Pl_Saved"] != ""){
-            $tnt = explode(",", $emocigan["Pl_Saved"]);
-        }
-        else{
-            $tnt = [];
-        }
-        echo 
-        '<form method = "GET" style="display:flex; justify-content: center; gap: 1.5rem;">
+    // Filtrační tlačítka
+    if (isset($_SESSION["username"])) {
+        echo '<form method="GET" style="display:flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;">
             <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'all' ? '' : 'login__button-ghost') . '" style="width:auto;" value="all">Všechny playlisty</button>
-            <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'user' ? '' : 'login__button-ghost' ). '" style="width:auto;" value="user">Moje playlisty</button>
+            <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'user' ? '' : 'login__button-ghost') . '" style="width:auto;" value="user">Moje playlisty</button>
         </form>';
     }
     ?>
@@ -43,17 +35,15 @@ $activeFilter = $_GET['filter'] ?? 'all';
 <?php 
 
 // Všechny playlisty
-if($activeFilter == "all"){
+if ($activeFilter == "all") {
     if ($playlistData->num_rows > 0) {
         while ($row = $playlistData->fetch_assoc()) {
             echo '<article class="projects__card">
                     <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__image"><img src="' . $row["PlThumbnail"] . '" alt="thumbnail" class="projects__img">
                     </a>
                     <div class="projects__data">
-                        <h3 class="projects__name">'
-                            . $row["PlName"] . '
-                        </h3>
-                        <p class="projects__description">' . $row["Description"] . '</p>
+                        <h3 class="projects__name">' . htmlspecialchars($row["PlName"]) . '</h3>
+                        <p class="projects__description">' . htmlspecialchars($row["Description"]) . '</p>
                     </div>
                     <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__button">
                         <i class="ri-links-line"></i>
@@ -67,38 +57,46 @@ if($activeFilter == "all"){
 }
 
 // User playlisty
-else{
-    if (count($tnt) != 0) {
-        foreach ($tnt as $playlist) {
-            $playlistData = $conn -> query("SELECT * FROM `playlisty` WHERE ID = $playlist");
-            $row = $playlistData -> fetch_assoc();
-            echo '<article class="projects__card">
-                    <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__image"><img src="' . $row["PlThumbnail"] . '" alt="thumbnail" class="projects__img">
-                    </a>
-                    <div class="projects__data">
-                        <h3 class="projects__name">'
-                            . $row["PlName"] . '
-                        </h3>
-                        <p class="projects__description">' . $row["Description"] . '</p>
-                    </div>
-                    <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__button">
-                        <i class="ri-links-line"></i>
-                        <span>Navštívit playlist</span>
-                    </a>
-                </article>';
+elseif ($activeFilter == "user" && isset($_SESSION["username"])) {
+    // Získání ID uživatele
+    $userQuery = $conn->prepare("SELECT ID FROM users WHERE Username = ?");
+    $userQuery->bind_param("s", $_SESSION["username"]);
+    $userQuery->execute();
+    $userResult = $userQuery->get_result();
+    if ($userRow = $userResult->fetch_assoc()) {
+        $userID = $userRow['ID'];
+
+        // Získání uložených playlistů
+        $savedPlaylists = $conn->prepare("SELECT p.* FROM playlisty p INNER JOIN SavedPl ps ON p.ID = ps.PlaylistID WHERE ps.UserID = ?");
+        $savedPlaylists->bind_param("i", $userID);
+        $savedPlaylists->execute();
+        $savedPlaylistsResult = $savedPlaylists->get_result();
+
+        if ($savedPlaylistsResult->num_rows > 0) {
+            while ($row = $savedPlaylistsResult->fetch_assoc()) {
+                echo '<article class="projects__card">
+                        <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__image"><img src="' . $row["PlThumbnail"] . '" alt="thumbnail" class="projects__img">
+                        </a>
+                        <div class="projects__data">
+                            <h3 class="projects__name">' . htmlspecialchars($row["PlName"]) . '</h3>
+                            <p class="projects__description">' . htmlspecialchars($row["Description"]) . '</p>
+                        </div>
+                        <a href="playlist.php?PlaylistID='. $row["ID"] .'" class="projects__button">
+                            <i class="ri-links-line"></i>
+                            <span>Navštívit playlist</span>
+                        </a>
+                    </article>';
+            }
+        } else {
+            echo "<p>Žádné uložené playlisty nebyly nalezeny.</p>";
         }
-    } else {
-        echo "<p>Žádné playlisty nebyly nalezeny.</p>";
     }
 }
-        ?>
+?>
     </div>
 </section>
 <?php require "./layout/footer.html";
-    $conn -> close();
-    if(isset($playlistData)){
-        $playlistData -> close();
-    }
+$conn->close();
 ?>
 </div>
 </body>

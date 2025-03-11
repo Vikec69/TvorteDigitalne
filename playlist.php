@@ -14,6 +14,12 @@ if (isset($_GET['PlaylistID'])) {
     $queryResult = $playlistData->get_result();
     $result = $queryResult->fetch_assoc();
 
+    $videoCountQuery = $conn->prepare("SELECT COUNT(*) as count FROM videa WHERE Playlist = ?");
+    $videoCountQuery->bind_param("i", $playlistID);
+    $videoCountQuery->execute();
+    $videoCountResult = $videoCountQuery->get_result();
+    $videoCount = $videoCountResult->fetch_assoc()['count'];
+
     // Načtení údajů o uživateli, který playlist vytvořil
     $UserData = $conn->prepare("SELECT users.Username, users.ProfilePic FROM `playlisty` JOIN users ON playlisty.CreatedBy = users.ID WHERE users.ID = ?");
     $UserData->bind_param("i", $result['CreatedBy']);
@@ -22,6 +28,19 @@ if (isset($_GET['PlaylistID'])) {
     $UserResult = $queryresult->fetch_assoc();
 } else {
     die("Chyba: Playlist ID není nastaveno.");
+}
+
+// Získání ID uživatele podle jeho username
+$userID = null;
+if (isset($_SESSION["username"])) {
+    $userQuery = $conn->prepare("SELECT ID FROM users WHERE Username = ?");
+    $userQuery->bind_param("s", $_SESSION["username"]);
+    $userQuery->execute();
+    $userQueryResult = $userQuery->get_result();
+    if ($userQueryResult->num_rows > 0) {
+        $userRow = $userQueryResult->fetch_assoc();
+        $userID = $userRow['ID'];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -41,36 +60,24 @@ if (isset($_GET['PlaylistID'])) {
 <!-- Informace o playlistu -->
 <section class="playlist-details">
     <section class="playlist-details ">
-            <div class="row">
+    <div class="row">
                <div class="column">
                   <div class="thumb">
-                     <img src="<?php echo $result['PlThumbnail']?>" alt="">
-                     <span><?php 
-                        $splitington = explode(",", $result['VIDEO_ID']);
-                        echo count($splitington) . " Videa";
-                        ?></span>
+                     <img src="<?php echo htmlspecialchars($result['PlThumbnail']); ?>" alt="">
+                     <span><?php echo $videoCount . " Videa"; ?></span>
                   </div>
                </div>
                <div class="column">
-
                   <div class="details">
-                    <h3><?php                     
-                        echo $result["PlName"];
-                    ?></h3>
-                     <p><?php                     
-                        echo $result["Description"];
-                    ?></p>
+                    <h3><?php echo htmlspecialchars($result["PlName"]); ?></h3>
+                     <p><?php echo htmlspecialchars($result["Description"]); ?></p>
                   </div>
 
                   <div class="tutor">
-                   <img src="<?php echo $UserResult['ProfilePic']?>" alt="">
+                   <img src="<?php echo htmlspecialchars($UserResult['ProfilePic']); ?>" alt="">
                      <div>
-                        <h3><?php                     
-                        echo $UserResult["CreatedBy"];
-                    ?></h3>
-                        <span><?php                     
-                        echo $result["CreatedAt"];
-                    ?></span>
+                        <h3><?php echo htmlspecialchars($UserResult["Username"]); ?></h3>
+                        <span><?php echo htmlspecialchars($result["CreatedAt"]); ?></span>
                      </div>
                   </div>
 
@@ -79,23 +86,29 @@ if (isset($_GET['PlaylistID'])) {
                     <button name = "SavePlaylist" type="submit"><i class="ri-bookmark-line"></i>Uložit playlist</button>
                  </form>
                  <?php
-                 if(isset($_POST['SavePlaylist'])){
-                    if($_SESSION["username"] != null){
-                        $playlistsSaved = explode(",", mysqli_fetch_assoc($conn -> query("SELECT Pl_Saved FROM users WHERE Username = '".$_SESSION["username"]."'"))["Pl_Saved"]);      
-                        if(in_array($result["ID"], $playlistsSaved)){
-                            unset($playlistsSaved[array_search($result["ID"], $playlistsSaved)]);
-                        }
-                        else{
-                        $playlistsSaved[] = (string) $result["ID"];
-                        }
-                        $playlistsSaved = ltrim(implode(",", $playlistsSaved), ",");
-                        $conn -> query("UPDATE users SET Pl_Saved = '".$playlistsSaved."' WHERE Username = '".$_SESSION["username"]."'");
-                    }
-                    else{
-                        echo "Musíš být přihlášen, abys mohl uložit playlist.";
-                    };
+            if (isset($_POST['SavePlaylist']) && $userID !== null) {
+                // Kontrola, zda už playlist je uložen
+                $userQuery = $conn->prepare("SELECT * FROM SavedPl WHERE UserID = ? AND PlaylistID = ?");
+                $userQuery->bind_param("ii", $userID, $result["ID"]);
+                $userQuery->execute();
+                $userQueryResult = $userQuery->get_result();
+                $playlistExists = $userQueryResult->num_rows > 0;
+
+                if ($playlistExists) {
+                    // Playlist už je uložen, takže ho smažeme
+                    $deleteQuery = $conn->prepare("DELETE FROM SavedPl WHERE UserID = ? AND PlaylistID = ?");
+                    $deleteQuery->bind_param("ii", $userID, $result["ID"]);
+                    $deleteQuery->execute();
+                } else {
+                    // Playlist není uložen, tak ho přidáme
+                    $insertQuery = $conn->prepare("INSERT INTO SavedPl (UserID, PlaylistID) VALUES (?, ?)");
+                    $insertQuery->bind_param("ii", $userID, $result["ID"]);
+                    $insertQuery->execute();
                 }
-                 ?>
+            } elseif (!isset($_SESSION["username"])) {
+                echo '<p style = "text-align: center; margin-top:1rem;">Musíš být přihlášen, abys mohl uložit playlist.</p>';
+            }
+            ?>
                </div>
             </div>
             <!-- Výpis videí v playlistu -->
