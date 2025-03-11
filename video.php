@@ -123,7 +123,7 @@ require "./layout/navbar.php";
 <section class="watch-video">
     <div class="video-container">
         <div class="video">
-            <video src="<?php echo $result['Location'] ?>" controls poster="<?php echo $result['Thumbnail'] ?>" id="video"></video>
+            <video src="<?php echo $result['Location'] ?>" controls poster="<?php echo $result['Thumbnail'] ?>" width="1920" height="1080" id="video"></video>
         </div>
         <h3 class="title"><?php echo $result['VidName'] ?></h3>
         <div class="stats">
