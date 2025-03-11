@@ -64,7 +64,17 @@ if (isset($_SESSION["username"])) {
                <div class="column">
                   <div class="thumb">
                      <img src="<?php echo htmlspecialchars($result['PlThumbnail']); ?>" alt="">
-                     <span><?php echo $videoCount . " Videa"; ?></span>
+                     <span><?php
+                     $videa = "videí";
+                     if ($videoCount == 0) {
+                        $videa = "videí";
+                    } else if ($videoCount == 1) {
+                        $videa = "video";
+                    }
+                    else if ($videoCount <= 4) {
+                     $videa = "videa";
+                  } 
+                     echo $videoCount. " " . $videa;?></span>
                   </div>
                </div>
                <div class="column">
