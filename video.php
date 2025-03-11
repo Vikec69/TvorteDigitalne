@@ -21,11 +21,15 @@ require "./bts/common.php";
         // Počet lajků
         $like = "lajků";
         $likes = mysqli_num_rows($conn->query("SELECT * FROM `likedby` WHERE VidID = $videoID"));
-        if ($likes == 1) {
+        if ($likes == 0) {
+            $like = "lajků";
+        } else if ($likes == 1) {
             $like = "lajk";
-        } else if ($likes <= 4) {
-            $like = "lajky";
         }
+        else if ($likes <= 4) {
+         $like = "lajky";
+      }
+      
 
         // Získání uživatelských dat pro aktuálního uživatele
         $UserData = $conn->prepare("SELECT * FROM `users` WHERE Username = ?");
