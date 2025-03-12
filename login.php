@@ -68,7 +68,7 @@
         if ($queryResult -> num_rows < 1) {
           $insertUser = $conn -> prepare("INSERT INTO users (Username, Passwrd, Date_Created) VALUES (?, ?, ?)");
           $hashedPassword = password_hash($_POST['Passwrd'], PASSWORD_BCRYPT);
-          $insertUser -> bind_param("sss", $_POST['usrname'], $hashedPassword, date("d. m. Y"));
+          $insertUser -> bind_param("sss", $_POST['usrname'], $hashedPassword, date("Y-m-d"));
           if ($insertUser -> execute()) {
             $_SESSION["username"] = $_POST["usrname"];
             header("Location: ./index.php");

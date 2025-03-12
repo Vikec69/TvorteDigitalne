@@ -862,7 +862,6 @@ body.experience {
   .playlist-details .row .column .details h3{
      font-size: 2rem;
      color: var(--bila-barva);
-     text-transform: capitalize;
   }
   
   .playlist-details .row .column .details p{
@@ -1018,7 +1017,7 @@ body.experience {
  .watch-video .video-container .tutor{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 1rem;
  }
  

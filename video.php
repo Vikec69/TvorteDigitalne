@@ -119,6 +119,7 @@ require "./bts/common.php";
 <?php 
 $active3 = "active-link";
 require "./layout/navbar.php";
+$formattedDate = date("d-m-Y", strtotime($result["DateUploaded"]));
 ?>
 <section class="watch-video">
     <div class="video-container">
@@ -129,7 +130,7 @@ require "./layout/navbar.php";
         </div>
         <h3 class="title"><?php echo $result['VidName'] ?></h3>
         <div class="stats">
-            <p class="date"><i class="ri-calendar-line"></i><span><?php echo $result['DateUploaded'] ?></span></p>
+            <p class="date"><i class="ri-calendar-line"></i><span><?php echo $formattedDate ?></span></p>
             <p class="date"><i class="ri-heart-line"></i><span><?php echo $likes . " " . $like ?></span></p>
         </div>
         <div class="tutor">

@@ -42,6 +42,10 @@ if (isset($_SESSION["username"])) {
         $userID = $userRow['ID'];
     }
 }
+
+// Převedení formátu data z databáze na stránku
+$formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
+
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -87,7 +91,7 @@ if (isset($_SESSION["username"])) {
                    <img src="<?php echo htmlspecialchars($UserResult['ProfilePic']); ?>" alt="">
                      <div>
                         <h3><?php echo htmlspecialchars($UserResult["Username"]); ?></h3>
-                        <span><?php echo htmlspecialchars($result["CreatedAt"]); ?></span>
+                        <span><?php echo htmlspecialchars($formattedDate); ?></span>
                      </div>
                   </div>
 
