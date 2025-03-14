@@ -38,7 +38,7 @@ require "./bts/common.php";
         $queryresult = $UserData->get_result();
         $UserResult = $queryresult->fetch_assoc();
 
-         // Získání dat o uživatelském profilu vikeca
+         // Získání dat o uživatelském profilu uploadera (videa tam budu nahrávat jen já)
          $uploaderData = $conn->prepare("
             SELECT users.Username, users.ProfilePic
             FROM users
@@ -53,7 +53,7 @@ require "./bts/common.php";
         // Počet komentářů
         $pocetkom = mysqli_num_rows($conn->query("SELECT * FROM `komentare` WHERE VIDEO_ID = $videoID"));
         
-        // Získání komentářů a údajů o uživatelském jménu a profilovém obrázku
+        // Získání komentářů a údajů o uživateli
         $query = "
         SELECT komentare.*, users.Username, users.ProfilePic
         FROM komentare
@@ -84,7 +84,7 @@ require "./bts/common.php";
             header("Refresh:0");
         }
 
-        // Lajk nebo odliknutí
+        // Lajk nebo odlajknutí
         if (isset($_POST["LIKE_BTN"])) {
             if ($_SESSION["username"] == null) {
                 header("Location: ./login.php");
@@ -173,8 +173,10 @@ $formattedDate = date("d-m-Y", strtotime($result["DateUploaded"]));
     try {
         while ($Komentar = $KomentareResult->fetch_assoc()) {
             // Pokud není profilový obrázek, použijeme výchozí
-            $userpic = $Komentar["ProfilePic"] ? $Komentar["ProfilePic"] : "./img/navrh.gif";
+            $userpic = $Komentar["ProfilePic"] ? $Komentar["ProfilePic"] : "./img/pfps/default.png";
             $username = $Komentar["Username"] ? $Komentar["Username"] : $Komentar["WrittenBy"];
+
+            $formattedDW = date("d-m-Y", strtotime($Komentar["DateWritten"]));
 
             echo '
             <div class="box-container">
@@ -183,7 +185,7 @@ $formattedDate = date("d-m-Y", strtotime($result["DateUploaded"]));
                         <img src="'.$userpic.'" alt="Profile Picture">
                         <div>
                             <h3>'. $username .'</h3>
-                            <span>'. $Komentar["DateWritten"] .'</span>
+                            <span>'. $formattedDW .'</span>
                         </div>
                     </div>
                     <div class="comment-box">'. $Komentar["Content"] .'</div>';

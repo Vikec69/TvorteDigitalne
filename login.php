@@ -39,7 +39,7 @@
                 <div>
                     <div class="login__buttons">
                         <input type="submit" class="login__button" value="Přihlásit se" name="LOGIN_BUTTON">
-                        <input type="submit" class="login__button login__button-ghost" value="Registrace" name="REG_BUTTON">
+                        <input type="submit" class="login__button login__button-ghost" value="Registrovat" name="REG_BUTTON">
                     </div>
                     <a href="./contact.php" class="login__forgot">Zapomněli jste heslo?</a>
                 </div>
@@ -78,7 +78,7 @@
           } 
         } 
         else {
-          $message = "Uživatel s jménem '". $_POST['usrname'] . "' již má zaregistrovaný účet.";
+          $message = "Uživatel již existuje.";
         }
     } 
     finally {
@@ -120,11 +120,11 @@ if (isset($_POST["LOGIN_BUTTON"])) {
                 header("Location: ./");
             }
             else {
-                $message = "Špatné přihlašovací údaje sigmo. *wink*";
+                $message = "Špatné přihlašovací údaje.";
               }
         } 
         else {
-            $message = "Špatné přihlašovací údaje sigmo. *wink*";
+            $message = "Špatné přihlašovací údaje.";
           }
         
     } 

@@ -27,7 +27,7 @@ $playlistData = $conn->query("SELECT * FROM `playlisty`");
     if (isset($_SESSION["username"])) {
         echo '<form method="GET" style="display:flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;">
             <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'all' ? '' : 'login__button-ghost') . '" style="width:auto;" value="all">Všechny playlisty</button>
-            <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'user' ? '' : 'login__button-ghost') . '" style="width:auto;" value="user">Moje playlisty</button>
+            <button type="submit" name="filter" class="login__button ' . ($activeFilter === 'user' ? '' : 'login__button-ghost') . '" style="width:auto;" value="user">Mé playlisty</button>
         </form>';
     }
     ?>

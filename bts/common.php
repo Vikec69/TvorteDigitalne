@@ -5,7 +5,7 @@ if(!isset($_SESSION["username"])){
     $_SESSION["username"] = null;
 }
 
-error_reporting(3);
+error_reporting(-1);
 
 $active1 = null;
 $active2 = null;
