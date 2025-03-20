@@ -40,6 +40,7 @@ if (isset($_SESSION["username"])) {
     if ($userQueryResult->num_rows > 0) {
         $userRow = $userQueryResult->fetch_assoc();
         $userID = $userRow['ID'];
+        echo "USER ROW ARRAY TO STRING CONVERSION CHYBA";
     }
 }
 
