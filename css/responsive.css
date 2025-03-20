@@ -201,21 +201,21 @@
  
  @media screen and (max-width: 768px){
 
-     .login__buttons{
+     .login_buttons{
          flex-direction: column;
      }
  
-     .footer__container{
+     .footer_container{
          display: block;
          margin-bottom: 7rem;
          max-width: 100%;
      }
  
-     .footer__container p{
+     .footer_container p{
          margin-top: 0.5rem
      }
  
-     .footer__social{
+     .footer_social{
          margin-top: 1rem
      }
  
@@ -224,22 +224,22 @@
  /*==Střední zařízení==*/
  
  @media screen and (min-width: 768px){
- .footer__container,
- .footer__content{
+ .footer_container,
+ .footer_content{
      grid-template-columns: repeat(2,max-content);
      align-items: center;
  }
- .footer__container{
+ .footer_container{
      justify-content: space-evenly;
  }
- .footer__content{
+ .footer_content{
      column-gap: 4.5rem;
  }
 
  }
  
  @media screen and (max-width: 1200px){
-     .login__form{
+     .login_form{
          width:350px;
          justify-self: center;
          transform: translateY(-50%);
@@ -258,31 +258,31 @@
         width:100%;
     }
 
-     .login__container{
+     .login_container{
          height: 100vh;
          display: grid;
          place-items: center;
 
      }
  
-     .login__content{
+     .login_content{
          width: 1024px;
          height: 600px;
      }
  
-     .login__img{
+     .login_img{
          border-radius: 3.5rem;
          box-shadow: 0 24px 48px var(--prvni-barva-alt);
      }
  
-     .login__form{
+     .login_form{
          justify-self: flex-end;
          margin-right: 4.5rem;
          margin-top: 5rem;
          width:450px;
      }
  
-     .login__title{
+     .login_title{
          font-size: var(--h1-velikost);
      }
  }
@@ -371,22 +371,22 @@
          width: max-content;
      }
  
-     .nav__list{
+     .nav_list{
          column-gap: 1.25rem;
      }
  
-     .home__container,
-     .projects__container,
-     .knowledge__container,
-     .experience__container,
-     .contact__container{
+     .home_container,
+     .projects_container,
+     .knowledge_container,
+     .experience_container,
+     .contact_container{
      grid-template-columns: 380px;
      justify-content: center;
      }
  }
  
  @media screen and (min-width: 768px){
-     .home__container{
+     .home_container{
          grid-template-columns: repeat(2, 350px);
          align-items: flex-start;
      }
@@ -395,16 +395,16 @@
          height: 100%;
      }
  
-     .projects__container,
-     .knowledge__container{
+     .projects_container,
+     .knowledge_container{
          grid-template-columns: repeat(2, 350px);
      }
  
-     .experience__container{
+     .experience_container{
          grid-template-columns: initial;
      }
  
-     .experience__card{
+     .experience_card{
          grid-template-columns: 320px 380px;
          align-items: center;
      }
@@ -426,12 +426,12 @@
          padding-block: 3rem 4rem;
      }
  
-     .section__title{
+     .section_title{
          font-size: var(--max-velikost);
          margin-bottom: 3rem;
      }
  
-     .home__container{
+     .home_container{
          grid-template-columns: 280px 560px 280px;
          align-items: stretch;
      }
@@ -442,11 +442,11 @@
          padding: 2rem;
      }
  
-     .profil__img{
+     .profil_img{
          width: 1200px;
      }
  
-     .profil__data{
+     .profil_data{
          width: 370px;
          padding: 1.5rem;
          border-radius: 2rem;
@@ -457,7 +457,7 @@
          grid-row: 1/2;
      }
  
-     .info__name{
+     .info_name{
          font-size: var(--h2-velikost);
      }
  
@@ -467,11 +467,11 @@
          align-content: center;
      }
  
-     .about__image{
+     .about_image{
          height: 210px;
      }
  
-     .about__img{
+     .about_img{
          transform: translateY(-1rem);
      }
  
@@ -480,70 +480,70 @@
          grid-row: 2/3;
      }
  
-     .skills__title{
+     .skills_title{
          font-size: var(--h3-velikost);
      }
  
-     .projects__container{
+     .projects_container{
          grid-template-columns: repeat(3, 368px);
          gap: 2rem;
      }
  
-     .projects__card{
+     .projects_card{
          padding-bottom: 2rem;
      }
  
-     .knowledge__container{
+     .knowledge_container{
          grid-template-columns: repeat(3, 368px);
          gap: 2rem;
      }
  
-     .knowledge__card{
+     .knowledge_card{
          padding-block: 6rem 5rem;
      }
  
-     .knowledge__icon i {
+     .knowledge_icon i {
          font-size: 3.5rem;
      }
  
-     .knowledge__circle{
+     .knowledge_circle{
          width: 4rem;
          height: 4rem;
          right: -1.5rem;
          top: -1.5rem
      }
  
-     .experience__container{
+     .experience_container{
          row-gap: 4rem;
      }
  
-     .experience__card{
+     .experience_card{
          grid-template-columns: 350px 510px;
          column-gap: 8rem;
      }
  
-     .experience__company{
+     .experience_company{
          font-size: var(--h1-velikost);
      }
  
-     .experience__data{
+     .experience_data{
          padding: 2rem;
          border-radius: 2rem;
      }
  
-     .contact__container{
+     .contact_container{
          grid-template-columns: 620px;
      }
  
-     .contact__group{
+     .contact_group{
          grid-template-columns: repeat(2, 1fr);
      }
  
-     .contact__area{
+     .contact_area{
          height: 15rem;
      }
  
-     .contact__button{
+     .contact_button{
          width: max-content;
          justify-self: center;
      }
@@ -561,7 +561,7 @@
          margin-block: auto;
      }
  
-     .nav__list{
+     .nav_list{
          flex-direction: column;
          row-gap: 1.25rem;
      }

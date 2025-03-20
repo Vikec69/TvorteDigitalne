@@ -128,8 +128,8 @@ $formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
             <!-- Výpis videí v playlistu -->
     </section> 
          <section class = "projects section">
-            <h2 class="section__title">Videa v playlistu</h2>
-            <div class="projects__container container grid">
+            <h2 class="section_title">Videa v playlistu</h2>
+            <div class="projects_container container grid">
                 <?php
                 // Načtení všech videí patřících do daného playlistu
                         $VideoData = $conn->prepare("SELECT * FROM videa WHERE Playlist = ?");
@@ -139,16 +139,16 @@ $formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
 
                 while ($video = $queryResult->fetch_assoc()) {
                 echo'
-                <article class="projects__card">
-                    <a href="video.php?VideoID='. $video["ID"] .'" class="projects__image"><img src="'. $video["Thumbnail"] .'" alt="image" class="projects__img">
+                <article class="projects_card">
+                    <a href="video.php?VideoID='. $video["ID"] .'" class="projects_image"><img src="'. $video["Thumbnail"] .'" alt="image" class="projects_img">
                     </a>
         
-                    <div class="projects__data">
-                        <h3 class="projects__name">'. $video["VidName"] .'</h3>
-                        <p class="projects__description">'. $video["Description"].'.</p>
+                    <div class="projects_data">
+                        <h3 class="projects_name">'. $video["VidName"] .'</h3>
+                        <p class="projects_description">'. $video["Description"].'.</p>
                     </div>
 
-                    <a href="video.php?VideoID='. $video["ID"] .'" class="projects__button">
+                    <a href="video.php?VideoID='. $video["ID"] .'" class="projects_button">
                         <i class="ri-links-line"></i>
                         <span>Přehrát video</span>
                     </a>

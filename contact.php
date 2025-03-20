@@ -14,16 +14,16 @@
     require "./layout/navbar.php";
     ?>
     <section class="contact section">
-        <h2 class="section__title">KONTAKTUJ MĚ</h2>
-        <div class="contact__container container grid">
-            <form action="" class="contact__form grid" id="contact-form">
-                <div class="contact__group grid">
-                    <input type="text" name="user_name" placeholder="Jméno" required class="contact__input">
-                    <input type="email" name="user_email" placeholder="Email" required class="contact__input">
+        <h2 class="section_title">KONTAKTUJ MĚ</h2>
+        <div class="contact_container container grid">
+            <form action="" class="contact_form grid" id="contact-form">
+                <div class="contact_group grid">
+                    <input type="text" name="user_name" placeholder="Jméno" required class="contact_input">
+                    <input type="email" name="user_email" placeholder="Email" required class="contact_input">
                 </div>
-                <textarea name="user_message" placeholder="Zpráva" class="contact__input contact__area"></textarea>
-                <button type="submit" class="button contact__button">Poslat zprávu</button>
-                <p class="contact__message" id="contact-message"></p>
+                <textarea name="user_message" placeholder="Zpráva" class="contact_input contact_area"></textarea>
+                <button type="submit" class="button contact_button">Poslat zprávu</button>
+                <p class="contact_message" id="contact-message"></p>
             </form>
         </div>
     </section>

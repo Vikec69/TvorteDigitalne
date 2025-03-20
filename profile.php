@@ -31,19 +31,19 @@ finally{
     $active4 = "active-link";
     require "./layout/navbar.php";
     ?>
-    <div class="login__container">
-        <div class="login__content">
-            <img src="img/6073424.jpg" alt="login image" class="login__img">
-            <form method="POST" class="login__form">
+    <div class="login_container">
+        <div class="login_content">
+            <img src="img/6073424.jpg" alt="login image" class="login_img">
+            <form method="POST" class="login_form">
                 <div class="responsive">
                     <form action="./bts/upload.php" method="post" enctype="multipart/form-data">
-                        <h2 class="pfp__label">Změna profilového obrázku</h2>
-                        <img src="<?php echo $userpic ?>" style="height: 120px; width: 120px; border-radius: 50%; object-fit: cover;" class="pfp__upload" alt="profile_picture">
-                        <input class="pfp__upload" type="file" name="fileToUpload" id="fileToUpload">
-                        <button class="login__button login__button-ghost" type="submit" name="submit"> Nahrát obrázek </button>
+                        <h2 class="pfp_label">Změna profilového obrázku</h2>
+                        <img src="<?php echo $userpic ?>" style="height: 120px; width: 120px; border-radius: 50%; object-fit: cover;" class="pfp_upload" alt="profile_picture">
+                        <input class="pfp_upload" type="file" name="fileToUpload" id="fileToUpload">
+                        <button class="login_button login_button-ghost" type="submit" name="submit"> Nahrát obrázek </button>
                     </form>
-                    <div class="login__buttons">
-                        <input type="submit" class="login__button" value="Odhlásit se" name="LOGOUT_BUTTON">
+                    <div class="login_buttons">
+                        <input type="submit" class="login_button" value="Odhlásit se" name="LOGOUT_BUTTON">
                     </div>
                 </div>
             </form>
