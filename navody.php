@@ -61,7 +61,7 @@ elseif ($activeFilter == "user" && isset($_SESSION["username"])) {
         $userID = $userRow['ID'];
 
         // Získání uložených playlistů
-        $savedPlaylists = $conn->prepare("SELECT playlisty.* FROM playlisty INNER JOIN SavedPl ON playlisty.ID = SavedPl.PlaylistID WHERE SavedPl.UserID = ?");
+        $savedPlaylists = $conn->prepare("SELECT playlisty.* FROM playlisty INNER JOIN savedpl ON playlisty.ID = savedpl.PlaylistID WHERE savedpl.UserID = ?");
         $savedPlaylists->bind_param("i", $userID);
         $savedPlaylists->execute();
         $savedPlaylistsResult = $savedPlaylists->get_result();
