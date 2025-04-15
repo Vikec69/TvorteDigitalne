@@ -64,7 +64,7 @@ $formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
 <!-- Informace o playlistu -->
 <section class="playlist-details">
     <section class="playlist-details ">
-    <div class="row">
+        <div class="row">
                <div class="column">
                   <div class="thumb">
                      <img src="<?php echo htmlspecialchars($result['PlThumbnail']); ?>" alt="">
