@@ -71,10 +71,10 @@
                         <h2 class="skills__title">ZKUŠENOSTI</h2>
 
                         <div class="skills__items">
-                            <img src="img/icons8-adobe_premiere.svg" alt="image" class="skills__item">
-                            <img src="img/icons8-adobe_ae.svg" alt="image" class="skills__item">
-                            <img src="img/icons8-adobe_photoshop.svg" alt="image" class="skills__item">
-                            <img src="img/adobe-photoshop-lightroom-cc-icon.svg" alt="image" class="skills__item">
+                            <img src="img/premiere-icon.svg" alt="image" class="skills__item">
+                            <img src="img/ae-icon.svg" alt="image" class="skills__item">
+                            <img src="img/photoshop-icon.svg" alt="image" class="skills__item">
+                            <img src="img/lightroom-icon.svg" alt="image" class="skills__item">
                         </div>
                     <p class="skills__description">
                         Koukni na moje projekty, 
