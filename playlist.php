@@ -102,7 +102,7 @@ $formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
                  <?php
             if (isset($_POST['SavePlaylist']) && $userID !== null) {
                 // Kontrola, zda už playlist je uložen
-                $userQuery = $conn->prepare("SELECT * FROM SavedPl WHERE UserID = ? AND PlaylistID = ?");
+                $userQuery = $conn->prepare("SELECT * FROM savedpl WHERE UserID = ? AND PlaylistID = ?");
                 $userQuery->bind_param("ii", $userID, $result["ID"]);
                 $userQuery->execute();
                 $userQueryResult = $userQuery->get_result();
@@ -110,12 +110,12 @@ $formattedDate = date("d-m-Y", strtotime($result["CreatedAt"]));
 
                 if ($playlistExists) {
                     // Playlist už je uložen, takže ho smažeme
-                    $deleteQuery = $conn->prepare("DELETE FROM SavedPl WHERE UserID = ? AND PlaylistID = ?");
+                    $deleteQuery = $conn->prepare("DELETE FROM savedpl WHERE UserID = ? AND PlaylistID = ?");
                     $deleteQuery->bind_param("ii", $userID, $result["ID"]);
                     $deleteQuery->execute();
                 } else {
                     // Playlist není uložen, tak ho přidáme
-                    $insertQuery = $conn->prepare("INSERT INTO SavedPl (UserID, PlaylistID) VALUES (?, ?)");
+                    $insertQuery = $conn->prepare("INSERT INTO savedpl (UserID, PlaylistID) VALUES (?, ?)");
                     $insertQuery->bind_param("ii", $userID, $result["ID"]);
                     $insertQuery->execute();
                 }
