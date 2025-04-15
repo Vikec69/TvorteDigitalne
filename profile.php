@@ -33,7 +33,7 @@ finally{
     ?>
     <div class="login_container">
         <div class="login_content">
-            <img src="./img/login-bg.jpg" alt="login image" class="login_img">
+            <img src="./img/profile.jpg" alt="login image" class="profile_img">
             <form method="POST" class="login_form">
                 <div class="responsive">
                     <form action="./bts/upload.php" method="post" enctype="multipart/form-data">
@@ -43,7 +43,7 @@ finally{
                         <button class="login_button login_button-ghost" type="submit" name="submit"> Nahrát obrázek </button>
                     </form>
                     <div class="login_buttons">
-                        <input type="submit" class="login_button" value="Odhlásit se" name="LOGOUT_BUTTON">
+                        <input type="submit" class="logout_button" value="Odhlásit se" name="LOGOUT_BUTTON">
                     </div>
                 </div>
             </form>
