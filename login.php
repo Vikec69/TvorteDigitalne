@@ -8,10 +8,10 @@
     $active4 = "active-link";
     require "./layout/navbar.php";
     ?>
-    <div class="login__container">
-        <div class="login__content">
-            <img src="./img/login-bg.jpg" alt="login image" class="login__img">
-            <form method="POST" class="login__form">
+    <div class="login_container">
+        <div class="login_content">
+            <img src="./img/login.jpg" alt="login image" class="login_img">
+            <form method="POST" class="login_form">
                 <div>
                     <h1 class="login_title">
                         <span>Vítejte </span>zpět

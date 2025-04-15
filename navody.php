@@ -59,7 +59,6 @@ elseif ($activeFilter == "user" && isset($_SESSION["username"])) {
     $userResult = $userQuery->get_result();
     if ($userRow = $userResult->fetch_assoc()) {
         $userID = $userRow['ID'];
-        echo "test" . $userRow['ID'];
 
         // Získání uložených playlistů
         $savedPlaylists = $conn->prepare("SELECT playlisty.* FROM playlisty INNER JOIN SavedPl ON playlisty.ID = SavedPl.PlaylistID WHERE SavedPl.UserID = ?");
@@ -83,7 +82,7 @@ elseif ($activeFilter == "user" && isset($_SESSION["username"])) {
                     </article>';
             }
         } else {
-            echo "<p>Žádné uložené playlisty nebyly nalezeny.</p>";
+            echo '<p>Žádné uložené playlisty nebyly nalezeny.</p>';
         }
     }
 }

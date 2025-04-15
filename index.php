@@ -70,11 +70,11 @@
                     <div class="skills">
                         <h2 class="skills_title">ZKUŠENOSTI</h2>
 
-                        <div class="skills__items">
-                            <img src="img/premiere-icon.svg" alt="image" class="skills__item">
-                            <img src="img/ae-icon.svg" alt="image" class="skills__item">
-                            <img src="img/photoshop-icon.svg" alt="image" class="skills__item">
-                            <img src="img/lightroom-icon.svg" alt="image" class="skills__item">
+                        <div class="skills_items">
+                            <img src="img/premiere-icon.svg" alt="image" class="skills_item">
+                            <img src="img/ae-icon.svg" alt="image" class="skills_item">
+                            <img src="img/photoshop-icon.svg" alt="image" class="skills_item">
+                            <img src="img/lightroom-icon.svg" alt="image" class="skills_item">
                         </div>
                     <p class="skills_description">
                         Koukni na moje projekty, 
@@ -148,7 +148,7 @@
 
 <!-- Tabulka s ceníkem -->
 <h2 style="margin-bottom: 2rem; text-align: center;">Mé služby - Ceník</h2>
-    <table class="tabulkos" style = "margin-bottom: 2rem;">
+    <table class="tabulkos" style = "margin-bottom: 3rem;">
         <thead>
             <tr>
                 <th>Název</th>

@@ -12,7 +12,7 @@
 <body>
     <div class="login_container">
         <div class="login_content">
-            <img src="img/reg_back.jpg" alt="login image" class="login_img">
+            <img src="./img/reg.jpg" alt="login image" class="login_img">
             <form method="POST" class="login_form">
                 <div>
                     <h1 class="login_title">
