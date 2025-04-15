@@ -21,21 +21,21 @@ try{
 }
     ?>
     <section class = "projects section">
-        <h2 class="section__title">PROJEKTY</h2>
-        <div class="projects__container container grid">
+        <h2 class="section_title">PROJEKTY</h2>
+        <div class="projects_container container grid">
             <?php
             foreach($projekty as $projekt){
             echo'
-            <article class="projects__card">
-                <a href="'. $projekt["Odkaz"] .'" target="_blank" class="projects__image"><img src="'. $projekt["Img"] .'" alt="image" class="projects__img">
+            <article class="projects_card">
+                <a href="'. $projekt["Odkaz"] .'" target="_blank" class="projects_image"><img src="'. $projekt["Img"] .'" alt="image" class="projects_img">
                 </a>
     
-                <div class="projects__data">
-                    <h3 class="projects__name">'. $projekt["Name"] .'</h3>
-                    <p class="projects__description">'. $projekt["Descr"] .'</p>
+                <div class="projects_data">
+                    <h3 class="projects_name">'. $projekt["Name"] .'</h3>
+                    <p class="projects_description">'. $projekt["Descr"] .'</p>
                 </div>
     
-                <a href="'. $projekt["Odkaz"] .'" target="_blank" class="projects__button">
+                <a href="'. $projekt["Odkaz"] .'" target="_blank" class="projects_button">
                     <i class="ri-links-line"></i>
                     <span>Odkaz na stránky</span>
                 </a>

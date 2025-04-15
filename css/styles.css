@@ -132,7 +132,7 @@ img {
     padding-block: 2rem 3rem;
 }
 
-.section__title {
+.section_title {
     font-size: var(--h2-velikost);
     text-align: center;
     margin-bottom: 2rem;
@@ -149,7 +149,7 @@ img {
     transition: background-color .4s
 }
 
-.button__black{
+.button_black{
     background-color: var(--cerna-barva);
 }
 
@@ -189,13 +189,13 @@ img {
     z-index: var(--z-fixed);
 }
 
-.nav__list{
+.nav_list{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav__link{
+.nav_link{
     width: 2.5rem;
     height: 2.5rem;
     background-color: transparent;
@@ -211,13 +211,13 @@ img {
     background-color: var(--prvni-barva);
 }
 
-.nav__link:hover{
+.nav_link:hover{
 background-color: var(--prvni-barva-alt);
 }
 
 /*======FOOTER=======*/
 
-.footer__container{
+.footer_container{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -225,18 +225,18 @@ background-color: var(--prvni-barva-alt);
     padding-bottom: 1rem;
 }
 
-.footer__logo{
+.footer_logo{
     color: var(--bila-barva);
     font: var(--font-regular) var(--max-velikost) var(--body-font);
 }
 
-.footer__social{
+.footer_social{
     display: flex;
     justify-content: center;
     column-gap: 1.5rem;
 }
 
-.footer__social-link{
+.footer_social-link{
     width: 2.5rem;
     height: 2.5rem;
     background-color: var(--prvni-barva);
@@ -248,7 +248,7 @@ background-color: var(--prvni-barva-alt);
     transition: background-color .4s, color .4s;
 }
 
-.footer__social-link:hover{
+.footer_social-link:hover{
     background-color: var(--bila-barva);
     color: var(--cerna-barva)
 }
@@ -267,14 +267,14 @@ background-color: var(--prvni-barva-alt);
     overflow: hidden;
 }
 
-.profil__img{
+.profil_img{
     position:absolute;
     justify-self: center;
     align-self: flex-end;
     max-width: 700px;
 }
 
-.profil__data{
+.profil_data{
     align-self: flex-end;
     background-color: hsla(0, 0%, 1%, .1);
     backdrop-filter: blur(16px);
@@ -284,18 +284,18 @@ background-color: var(--prvni-barva-alt);
     border: 2px solid hsla(0, 0%, 100%, .5)
 }
 
-.profil__name{
+.profil_name{
     font: var(--font-medium) var(--max-velikost) var(--body-font);
     margin-bottom: 1rem;
 }
 
-.profil__buttons{
+.profil_buttons{
     display: grid;
     column-gap: .5rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.profil__buttons .button {
+.profil_buttons .button {
     padding: .75rem 0;
 }
 
@@ -309,25 +309,25 @@ background-color: var(--prvni-barva-alt);
     border-radius: 2rem;
 }
 
-.info__circle{
+.info_circle{
     width: 2rem;
     height: 2rem;
     background-color: var(--prvni-barva);
     border-radius: 50%;
 }
 
-.info__name{
+.info_name{
     font: var(--font-regular) var(--h1-velikost) var(--body-font)
 }
 
-.info__data{
+.info_data{
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
 }
 
-.info__image{
+.info_image{
     background: var(--prechod);
     height: 240px;
     border-radius: 2rem;
@@ -336,14 +336,14 @@ background-color: var(--prvni-barva-alt);
     overflow: hidden;
 }
 
-.info__img{
+.info_img{
     width: 180px;
     justify-self: center;
     align-self: flex-end;
     padding: 2rem
 }
 
-.info__description{
+.info_description{
     font-size: var(--stredni-velikost);
     margin-bottom: 2rem;
 }
@@ -353,20 +353,20 @@ background-color: var(--prvni-barva-alt);
 }
 
 /*O MNĚ*/
-.about__name{
+.about_name{
     font-size: var(--normalni-velikost);
     font-weight: var(--font-regular);
     margin-bottom: 1rem;
 }
 
-.about__social{
+.about_social{
     display: flex;
     justify-content: center;
     column-gap: 1.5rem;
     margin-block: 2rem;
 }
 
-.about__link{
+.about_link{
     width: 2.5rem;
     height: 2.5rem;
     background-color: var(--bila-barva);
@@ -378,12 +378,12 @@ background-color: var(--prvni-barva-alt);
     transition: background-color .4s, color .4s;
 }
 
-.about__link:hover{
+.about_link:hover{
     background-color: var(--prvni-barva);
     color: var(--bila-barva)
 }
 
-.about__image{
+.about_image{
     background: var(--prechod);
     height: 180px;
     border-radius: 2rem;
@@ -391,13 +391,13 @@ background-color: var(--prvni-barva-alt);
     overflow: hidden;
 }
 
-.about__img{
+.about_img{
     width: 250px;
     justify-self: center;
     transform: translateY(-2.5rem)
 }
 
-.about__note{
+.about_note{
     font-size: var(--mala-velikost);
     margin-block: 1rem 2rem;
 }
@@ -408,20 +408,20 @@ background-color: var(--prvni-barva-alt);
 
 /*Dovednosti*/
 
-.skills__title{
+.skills_title{
     font-size: var(--h2-velikost)
 }
 
-.skills__item{
+.skills_item{
     width: 2.5rem;
     transition: transform .4s;
 }
 
-.skills__item:hover{
+.skills_item:hover{
     transform: translateY(-.25rem);
 }
 
-.skills__items{
+.skills_items{
     display:flex;
     flex-wrap: wrap;
     align-items: center;
@@ -430,7 +430,7 @@ background-color: var(--prvni-barva-alt);
     
 }
 
-.skills__description{
+.skills_description{
     font-size: var(--mala-velikost);
 }
 
@@ -442,37 +442,37 @@ body.experience {
     margin: 0;
 }
 
-.experience__container{
+.experience_container{
     row-gap: 2rem;
 }
 
-.experience__card{
+.experience_card{
     display: grid;
     row-gap: 1rem;
 }
 
-.expreience__company{
+.expreience_company{
     font-size: var(--h2-velikost)
 }
 
-.experience__data{
+.experience_data{
     background-color: var(--container-barva);
     padding: 1.5rem;
     border-radius: 1.5rem;
 }
 
-.experience__profession{
+.experience_profession{
     font-size: var(--h3-velikost);
     margin-bottom: .5rem;
 }
 
-.experience__date{
+.experience_date{
     display:block;
     font-size: var(--mensi-velikost);
     margin-bottom : 1rem;
 }
 
-.experience__description{
+.experience_description{
     color: var(--text-barva);
 }
 
@@ -485,25 +485,25 @@ body.experience {
 }
 
 /*Vědomosti*/
-.knowledge__card{
+.knowledge_card{
     background-color: var(--container-barva);
     padding: 4rem 1.5rem 3.5rem 1.5rem;
     border-radius: 2rem;
 }
 
-.knowledge__icon{
+.knowledge_icon{
     display: inline-block;
     position: relative;
     margin-bottom: 2rem;
 }
 
-.knowledge__icon i {
+.knowledge_icon i {
     font-size: 2.5rem;
     position: relative;
     z-index: var(--z-tooltip);
 }
 
-.knowledge__circle{
+.knowledge_circle{
     width: 3rem;
     height: 3rem;
     background-color: var(--prvni-barva);
@@ -514,16 +514,16 @@ body.experience {
     transition: transform .4s;
 }
 
-.knowledge__name{
+.knowledge_name{
     font-size: var(--h3-velikost);
     margin-bottom: 1rem;
 }
 
-.knowledge__description{
+.knowledge_description{
     color: var(--text-barva)
 }
 
-.knowledge__card:hover .knowledge__circle{
+.knowledge_card:hover .knowledge_circle{
     transform: translate(.25rem, -.25rem);
 }
 
@@ -536,44 +536,44 @@ body.experience {
     margin: 0;
 }
 
-.contact__group,
-.contact__form{
+.contact_group,
+.contact_form{
     gap: 1rem;
 }
 
-.contact__form{
+.contact_form{
     position: relative;
 }
 
-.contact__input{
+.contact_input{
     background-color: var(--container-barva);
     padding: 1.25rem;
     border-radius: 2rem;
     color: var(--bila-barva)
 }
 
-.contact__input::placeholder{
+.contact_input::placeholder{
     color: var(--text-barva)
 }
 
-.contact__input:autofill{
+.contact_input:autofill{
     transition: background-color 6000s, color 6000s;
 }
 
-.contact__area{
+.contact_area{
     height: 15rem;
     border-radius: 2rem;
     resize:none;
 }
 
-.contact__message{
+.contact_message{
     position: absolute;
     left: 0;
     bottom: 4.5rem;
     font-size: var(--mensi-velikost)
 }
 
-.contact__button{
+.contact_button{
     margin-top:1.5rem;
     cursor:cell;
 }
@@ -593,19 +593,19 @@ body.experience {
     margin: 0;
 }
 
-.login__contents,
-.login__form,
-.login__inputs{
+.login_contents,
+.login_form,
+.login_inputs{
     display: grid;
 }
 
-.login__content{
+.login_content{
     position: relative;
     height: 100vh;
     align-items: center;
 }
 
-.login__img{
+.login_img{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -613,7 +613,7 @@ body.experience {
     object-position: center;
 }
 
-.login__form {
+.login_form {
     position: relative;
     background-color: hsla(0, 0%, 0%, 0.6);
     border: 2px solid hsla(244, 16%, 92%, .75);
@@ -624,22 +624,22 @@ body.experience {
     border-radius: 1rem;
 }
 
-.login__title{
+.login_title{
     color: var(--bila-barva);
     font-size: var(--h2-velikost);
     margin-bottom: .5rem;
 }
 
-.login__title span{
+.login_title span{
     color: var(--bila-barva)
 }
 
-.login__inputs{
+.login_inputs{
     row-gap: 0.75rem;
     margin-bottom: 0.5rem;
 }
 
-.login__label{
+.login_label{
     display: block;
     color: var(--bila-barva);
     font-size: var(--mala-velikost);
@@ -647,7 +647,7 @@ body.experience {
     margin-bottom: .25rem;
 }
 
-.login__input{
+.login_input{
     width: 100%;
     padding: 14px 12px;
     border-radius: 6px;
@@ -658,24 +658,24 @@ body.experience {
     transition: border .4s;
 }
 
-.login__input::placeholder{
+.login_input::placeholder{
     color: var(--cerna-barva)
 }
 
-.login__input:focus,
-.login__input:valid{
+.login_input:focus,
+.login_input:valid{
     border: 2px solid var(--prvni-barva);
 }
 
-.login__box{
+.login_box{
     position: relative;
 }
 
-.login__box .login__input{
+.login_box .login_input{
     padding-right: 36px;
 }
 
-.login__eye{
+.login_eye{
     width:max-content;
     height: max-content;
     position: absolute;
@@ -688,13 +688,13 @@ body.experience {
     color: var(--cerna-barva)
 }
 
-.login__check{
+.login_check{
     display: flex;
     column-gap: .5rem;
     align-items: center;
 }
 
-.login__check-input{
+.login_check-input{
     appearance: none;
     width: 16px;
     height: 16px;
@@ -703,11 +703,11 @@ body.experience {
     border-radius: .25rem;
 }
 
-.login__check-input:checked{
+.login_check-input:checked{
     background-color: var(--prvni-barva);
 }
 
-.login__check-input:checked::before{
+.login_check-input:checked::before{
     content: '✓';
     display: block;
     color:var(--bila-barva);
@@ -715,17 +715,17 @@ body.experience {
     transform: translate(1.5px, -2.5px);
 }
 
-.login__check-label{
+.login_check-label{
     color: var(--bila-barva);
     font-size:var(--mala-velikost);
 }
 
-.login__buttons{
+.login_buttons{
     display: flex;
     column-gap: .75rem;
 }
 
-.login__button{
+.login_button{
     width: 100%;
     padding: 14px 2rem;
     border-radius: 6px;
@@ -740,14 +740,14 @@ body.experience {
     cursor: pointer;
 }
 
-.login__button-ghost{
+.login_button-ghost{
     background:hsla(0, 0%, 15%, 0.6);
     border: 2px solid var(--bila-barva);
     color: var(--bila-barva);
     box-shadow: none;
 }
 
-.login__forgot{
+.login_forgot{
     font-size: var(--mala-velikost);
     font-weight: var(--font-semi-bold);
     color:var(--bila-barva);
@@ -891,43 +891,43 @@ body.experience {
  /*==PROJEKTY==*/
 
  
-.projects__card{
+.projects_card{
     background-color: var(--container-barva);
     padding: 1.5rem;
     border-radius: 2rem;
 }
 
-.projects__image{
+.projects_image{
     display: block;
     overflow: hidden;
     border-radius: 1.5rem ;
     margin-bottom: 1.5rem;
 }
 
-.projects__img{
+.projects_img{
     transition: transform .4s;
 }
 
-.projects__name{
+.projects_name{
     font-size:var(--h3-velikost);
     margin-bottom: .5rem;
 }
 
-.projects__description{
+.projects_description{
     color: var(--text-barva);
     margin-bottom: 1.5rem;
 }
 
-.projects__skill{
+.projects_skill{
     width: 1rem;
     transition: transform .4s;
 }
 
-.projects__skill:hover{
+.projects_skill:hover{
     transform: translateY(-.25rem)
 }
 
-.projects__skills{
+.projects_skills{
     width: max-content;
     height: 34px;
     background-color: var(--cerna-barva);
@@ -939,7 +939,7 @@ body.experience {
     margin-bottom: 1.5rem
 }
 
-.projects__button{
+.projects_button{
     color: var(--bila-barva);
     display: inline-flex;
     align-items: center;
@@ -947,20 +947,20 @@ body.experience {
     transition: color .4s;
 }
 
-.projects__button i{
+.projects_button i{
     font-size: 1.25rem;
 
 }
 
-.projects__button span {
+.projects_button span {
     font-weight: var(--font-medium);
 }
 
-.projects__button:hover{
+.projects_button:hover{
     color:var(--text-barva)
 }
 
-.projects__card:hover .projects__img{
+.projects_card:hover .projects_img{
     transform: scale(1.2);
 }
 
@@ -1197,12 +1197,12 @@ body.experience {
     width:100%;
 }
 
- .pfp__label{
+ .pfp_label{
     text-align: center;
     margin-bottom: 1rem;
  }
 
- .pfp__upload{
+ .pfp_upload{
     display: block;
     margin-right: auto;
     margin-left: auto;
