@@ -82,6 +82,14 @@ finally{
             $uploadOk = 0;
         }
 
+        $maxsize = 1024 * 1024 * 10; // převod Kb na Mb * 10Mb
+
+        //Kontrola, zda je obrázek pod 10Mb
+        if ($_FILES["fileToUpload"]["size"] > $maxsize) {
+            $mesag = "Omlouváme se, obrázek je příliš velký.";
+            $uploadOk = 0;
+        }
+
         // Kontrola, zda soubor již existuje
         if (file_exists($target_file)) {
             unlink($target_file);
