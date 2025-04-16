@@ -63,7 +63,7 @@
                         <img src="./img/ja/toottooot.png" alt="image" class="about_img">
                     </div>
                     <p class="about_note">
-                        Nejsem aktivní na socialních sítích, napište mi skrze stránku.
+                        Nejsem aktivní na sociálních sítích, napište mi skrze stránku.
                     </p>
                     <a href="./contact.php" class="button">Napiš mi</a>
                 </div>
@@ -78,7 +78,7 @@
                         </div>
                     <p class="skills_description">
                         Koukni na moje projekty, 
-                        ať vidíš co vše se můžeš naučit.
+                        ať vidíš, co vše se můžeš naučit.
                     </p>
                     </div>
             </div>
@@ -131,7 +131,7 @@
                         <div class="experience_data">
                             <h3 class="experience_profession">Student</h3>
                                 <span class="experience_date">09/21 - 06/25</span>
-                                    <p class="experience_description">Studuji informační technologie, abych všemu rozumněl.</p>
+                                    <p class="experience_description">Studuji informační technologie, abych všemu rozuměl.</p>
                         </div>
                 </article>
                 <article class="experience_card">

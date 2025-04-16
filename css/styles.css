@@ -169,7 +169,7 @@ img {
     -webkit-backdrop-filter: blur(16px);
     padding: 1rem 2rem;
     border-radius: 4rem;
-    z-index: var(--z-fixed);
+    z-index: 5;
 }
 
 .nav_list{
@@ -377,8 +377,8 @@ background-color: var(--prvni-barva-alt);
 .about_img{
     width: 250px;
     justify-self: center;
-    transform: translateY(-2.5rem)
-}
+    transform: translateY(-2.5rem);
+    }
 
 .about_note{
     font-size: var(--mala-velikost);
@@ -602,6 +602,7 @@ body.experience {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    z-index: -1;
 }
 
 .login_form {
